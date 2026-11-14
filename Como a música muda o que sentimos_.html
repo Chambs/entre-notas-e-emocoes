@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Entre notas e emoções: como a música influencia o que sentimos</title>
+<style>
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;overflow:hidden;background:#07080f;color:#f4f6ff;font-family:Inter,"Segoe UI",system-ui,sans-serif}
+body{--lv:0;background:radial-gradient(ellipse at 50% 115%,rgba(99,102,241,calc(.12 + var(--lv)*.5)),transparent 65%),radial-gradient(ellipse at 10% -10%,rgba(139,92,246,.2),transparent 50%),#07080f}
+#cv{position:fixed;inset:0;pointer-events:none}
+#st{position:absolute;width:1280px;height:720px;transform-origin:0 0}
+.s{position:absolute;inset:0;padding:52px 72px 70px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateY(12px);transition:.5s}
+.s.on{opacity:1;visibility:visible;transform:none}
+.kick{letter-spacing:.28em;font-size:15px;color:#a5b4fc;text-transform:uppercase;font-weight:600}
+h1{font-size:80px;line-height:1.04;font-weight:800;letter-spacing:-.02em;margin:18px 0}
+h2{font-size:44px;font-weight:800;letter-spacing:-.01em;margin:6px 0 22px}
+h3{font-size:28px;margin:6px 0}
+em{font-style:normal;background:linear-gradient(90deg,#a78bfa,#60a5fa);-webkit-background-clip:text;background-clip:text;color:transparent}
+p{font-size:19px;line-height:1.4;color:#c7cdee}
+.r{opacity:0;transform:translateY(18px);transition:.6s}
+.r.on{opacity:1;transform:none}
+.btn{font-weight:600;font-size:17px;font-family:inherit;border:1px solid rgba(255,255,255,.28);background:rgba(139,92,246,.28);color:#fff;border-radius:999px;padding:10px 18px;cursor:pointer;margin:8px 8px 0 0}
+.btn:hover{background:rgba(139,92,246,.6)}
+.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:18px;padding:22px;backdrop-filter:blur(6px)}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;flex:1}
+.num{font-size:15px;color:#a5b4fc;font-weight:700;letter-spacing:.2em}
+.vis{height:74px;display:flex;align-items:center;gap:14px;margin:10px 0}
+.dots i{display:block;width:26px;height:26px;border-radius:50%;background:#8b5cf6;animation:pu 1s infinite}
+.dots i+i{background:#60a5fa;animation-duration:.4s}
+@keyframes pu{50%{transform:scale(1.5);opacity:.5}}
+.chip{font-size:22px;font-weight:700;padding:6px 12px;border-radius:10px;background:rgba(255,255,255,.08)}
+.chip small{display:block;font-size:13px;color:#9aa3c7;font-weight:500}
+.eq{display:flex;align-items:flex-end;gap:5px;height:70px}
+.eq span{width:9px;background:linear-gradient(#a78bfa,#3b82f6);border-radius:3px;animation:eqa 1.6s ease-in-out infinite}
+@keyframes eqa{50%{transform:scaleY(.55)}}
+.eq span{transform-origin:bottom}
+svg.w{width:100%;height:40px}
+.pk{position:relative;width:560px;height:230px;margin:6px 0}
+.pk div{position:absolute;top:0;transition:.25s;text-align:center;font-size:14px;color:#334}
+.pk .w{width:70px;height:230px;background:#e8ebff;border:1px solid #0b0d1a;border-radius:0 0 8px 8px;padding-top:196px}
+.pk .b{width:44px;height:140px;background:#10122a;border-radius:0 0 6px 6px;z-index:2}
+.pk .w.on{background:#8b5cf6;color:#fff}
+.pk .b.on{background:#7c4dff;box-shadow:0 0 22px #8b5cf6}
+.pk .on.chg{background:#fbbf24;color:#111;box-shadow:0 0 26px #fbbf24}
+.row{display:flex;gap:40px;flex:1;align-items:flex-start}
+.ci{flex:1;display:flex;flex-direction:column;gap:14px}
+.ci .card b{font-size:24px}
+.ci .card{padding:14px 18px}
+.ci .card p{font-size:17px}
+.pn{flex:1;border-radius:22px;padding:26px 30px;border:1px solid var(--c);background:rgba(255,255,255,.04);transition:.4s}
+.pn.pl{box-shadow:0 0 70px var(--c)}
+.pn h3{font-size:54px;color:var(--c);margin:2px 0 6px}
+.bar{margin:11px 0}
+.bar span{display:flex;justify-content:space-between;font-size:16px;color:#aab3d8;margin-bottom:5px}
+.bar b{display:block;height:10px;border-radius:6px;background:rgba(255,255,255,.1);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--c);transition:width 1.2s .3s}
+.on .bar i{width:var(--w)}
+.note{font-size:16px;color:#8b94bb;margin-top:12px}
+.flow{display:flex;gap:44px;margin-top:10px}
+.nd{flex:1;position:relative}
+.nd:not(:first-child)::before{content:"";position:absolute;left:-40px;top:30px;width:38px;height:3px;background:linear-gradient(90deg,#8b5cf6,#3b82f6)}
+.nd .c{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;font-size:24px;font-weight:800;background:linear-gradient(135deg,#8b5cf6,#3b82f6);margin-bottom:14px}
+.nd p{font-size:17px}
+.warn{margin-top:38px;border-left:4px solid #fbbf24;padding:14px 22px;background:rgba(251,191,36,.07);border-radius:0 12px 12px 0;font-size:21px;color:#f4f6ff}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;flex:1}
+.au{font-size:23px;font-weight:700}
+.jr{font-size:15px;color:#a5b4fc;margin:2px 0 8px}
+.doi{font-size:12px;color:#8b94bb;margin-top:6px}
+.refs{columns:2;gap:36px;font-size:13px;line-height:1.45;color:#9aa3c7;margin-top:14px}
+.refs p{font-size:13px;margin-bottom:5px;color:#9aa3c7}
+#hud{position:fixed;left:0;right:0;bottom:0;padding:8px 18px calc(8px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:14px;font-size:13px;color:#8b94bb;z-index:5}
+#bar{flex:1;height:3px;background:rgba(255,255,255,.1);border-radius:2px}
+#pg{height:100%;width:0;background:linear-gradient(90deg,#8b5cf6,#3b82f6);transition:.4s}
+#hud button{background:none;border:1px solid rgba(255,255,255,.25);color:#fff;width:34px;height:30px;border-radius:8px;cursor:pointer;font-size:18px}
+#nt{position:fixed;left:50%;bottom:54px;transform:translateX(-50%);max-width:880px;width:calc(100% - 30px);background:rgba(10,12,28,.95);border:1px solid rgba(139,92,246,.5);border-radius:12px;padding:14px 18px;font-size:16px;line-height:1.45;display:none;z-index:6}
+#nt.show{display:block}
+.team{display:grid;grid-template-columns:repeat(2,minmax(240px,1fr));gap:8px 34px;max-width:780px;width:90%;margin:16px auto 4px;text-align:left;color:#a5b4fc;font-size:20px;font-weight:700}
+.team div{display:flex;justify-content:space-between;gap:16px}
+.team span:last-child{white-space:nowrap}
+@media(max-width:700px){.team{grid-template-columns:1fr;max-width:440px;font-size:17px;gap:5px}}
+</style></head><body>
+<canvas id="cv"></canvas>
+<div id="st">
+
+<section class="s" style="justify-content:center;text-align:center;align-items:center" data-n="(Calma, devagar.) Pense numa música que te deixa animado… e noutra que te deixa calmo. (pausa) O que, exatamente, o som faz com a gente? Hoje vamos ouvir, comparar e entender. Esta apresentação é o experimento.">
+<p class="kick">Técnicas de Apresentação Digital</p>
+<h1>Entre notas e emoções:<br><em>como a música influencia o que sentimos</em></h1>
+<div class="team r" aria-label="Integrantes do grupo"><div><span>Isabela Martines</span><span>23.01680-9</span></div><div><span>Raphaela de Paula</span><span>22.01804-2</span></div><div><span>João Vitor Ferrenha</span><span>22.00085-2</span></div><div><span>Matheus Feitosa</span><span>20.00628-4</span></div></div>
+</section>
+
+<section class="s" data-n="Quatro elementos constroem a atmosfera de qualquer música. Ritmo: lento acalma, rápido acelera. (toque os dois) Harmonia: a combinação das notas. (toque maior e menor) Timbre: a identidade do som, a mesma melodia com outra textura. E dinâmica: o volume que cresce cria expectativa. (toque o crescendo)">
+<p class="kick">Parte 1 · Os fundamentos</p><h2>Quatro elementos constroem a <em>atmosfera</em></h2>
+<div class="g4">
+<div class="card r"><span class="num">01</span><h3>Ritmo</h3><div class="vis dots"><i></i><i></i></div><p>Andamento muda a sensação de energia e urgência.</p><button class="btn" onclick="pulse(60)">Lento · 60</button><button class="btn" onclick="pulse(150)">Rápido · 150</button></div>
+<div class="card r"><span class="num">02</span><h3>Harmonia</h3><div class="vis"><div class="chip">C<small>Dó · Mi · Sol</small></div><div class="chip">Cm<small>Dó · Mi♭ · Sol</small></div></div><p>Notas combinadas sugerem estabilidade, melancolia ou tensão.</p><button class="btn" onclick="chord('maj')">Maior</button><button class="btn" onclick="chord('min')">Menor</button></div>
+<div class="card r"><span class="num">03</span><h3>Timbre</h3><div class="vis" style="flex-direction:column;gap:0"><svg class="w" data-w="sine"></svg><svg class="w" data-w="saw"></svg></div><p>A “identidade” do som: mesma melodia, outra textura.</p><button class="btn" onclick="timbre('sine')">Suave</button><button class="btn" onclick="timbre('sawtooth')">Brilhante</button><button class="btn" onclick="timbre('square')">Retrô</button></div>
+<div class="card r"><span class="num">04</span><h3>Dinâmica</h3><div class="vis"><div class="eq" id="eq"></div></div><p>Volume que cresce cria expectativa e drama.</p><button class="btn" onclick="dyn()">Crescendo</button></div>
+</div></section>
+
+<section class="s" data-n="Um acorde é um conjunto de notas tocadas juntas. Dó maior: Dó, Mi, Sol. (toque) Agora só uma nota muda: o Mi vira Mi bemol. (toque) Mesmo instrumento, mesma duração, outra sensação. E o acorde diminuto soa instável, como se pedisse uma resolução. Atenção: isso vale para a música ocidental, e nenhum acorde decide a emoção sozinho.">
+<p class="kick">Parte 2 · Acordes</p><h2>Mude <em>uma nota</em>. Mude a sensação.</h2>
+<div class="row"><div><div class="pk" id="pk"></div>
+<button class="btn" onclick="chord('maj')">Dó maior</button><button class="btn" onclick="chord('min')">Dó menor</button><button class="btn" onclick="chord('dim')">Dó diminuto</button><button class="btn" onclick="compare()">Comparar: Mi → Mi♭</button></div>
+<div class="ci">
+<div class="card r"><b>Maior · Dó Mi Sol</b><p>Brilho, estabilidade, abertura.</p></div>
+<div class="card r"><b>Menor · Dó Mi♭ Sol</b><p>Só uma nota desce: introspecção, seriedade.</p></div>
+<div class="card r"><b>Diminuto · Dó Mi♭ Sol♭</b><p>Instável: tensão e expectativa.</p></div>
+<p class="note r">Associações frequentes na música tonal ocidental, não leis universais.</p>
+</div></div></section>
+
+<section class="s" data-n="Agora o contraste máximo. Rock e metal: Roots Bloody Roots, do Sepultura, tem cerca de 120 batidas por minuto, riffs graves e distorcidos, baixo e bateria com forte acentuação rítmica. (toque) Energia, força, adrenalina. Jazz: Gary’s Theme, na gravação de Bill Evans, apresenta piano delicado, ritmo de valsa e harmonia expressiva. (toque) Introspecção, suavidade, nostalgia. Escolhas diferentes de ritmo, harmonia, timbre e dinâmica. Mas cuidado: nenhum gênero tem uma emoção só.">
+<p class="kick">Parte 3 · Contraste</p><h2><span style="color:#ff4d8d">Rock / Metal</span> × <span style="color:#4da3ff">Jazz</span>: os mesmos elementos, escolhas diferentes</h2>
+<div style="display:flex;gap:26px;flex:1">
+<div class="pn r" style="--c:#ff4d8d"><h3>Rock / Metal</h3><button class="btn" onclick="rock(this)">▶ Ouvir</button>
+<div id="rock-status" style="font-size:14px;margin-top:7px">Sepultura · Roots Bloody Roots · 0:06–0:20</div>
+<audio id="rock-audio" preload="metadata" src="Roots%20Bloody%20Roots%20%282017%20Remaster%29%20%5BnUCodt4zVw4%5D.webm#t=6,20"></audio>
+<div class="bar" style="--w:75%"><span>Andamento<em style="-webkit-text-fill-color:#fff">≈ 120 BPM</em></span><b><i></i></b></div>
+<div class="bar" style="--w:95%"><span>Intensidade (volume)</span><b><i></i></b></div>
+<div class="bar" style="--w:90%"><span>Aspereza do timbre (distorção)</span><b><i></i></b></div>
+<div class="bar" style="--w:65%"><span>Groove / síncope</span><b><i></i></b></div>
+<div class="bar" style="--w:35%"><span>Harmonia · riffs centrados em Dó</span><b><i></i></b></div>
+<p>Sensação provável: <b>energia, força, adrenalina</b></p></div>
+<div class="pn r" style="--c:#4da3ff"><h3>Jazz</h3><button class="btn" onclick="jazz(this)">▶ Ouvir</button>
+<div id="jazz-status" style="font-size:14px;margin-top:7px">Bill Evans · Gary’s Theme · 0:00–0:15</div>
+<audio id="jazz-audio" preload="metadata" src="Bill%20Evans%20-%20Gary%E2%80%99s%20Theme%20%28Official%20Remastered%20Audio%29%20%5BIM3PfiRSins%5D.webm#t=0,15"></audio>
+<div class="bar" style="--w:38%"><span>Andamento<em style="-webkit-text-fill-color:#fff">Lento e expressivo</em></span><b><i></i></b></div>
+<div class="bar" style="--w:30%"><span>Intensidade (volume)</span><b><i></i></b></div>
+<div class="bar" style="--w:20%"><span>Aspereza do timbre (distorção)</span><b><i></i></b></div>
+<div class="bar" style="--w:45%"><span>Ritmo · valsa</span><b><i></i></b></div>
+<div class="bar" style="--w:92%"><span>Complexidade harmônica</span><b><i></i></b></div>
+<p>Sensação provável: <b>introspecção, suavidade, nostalgia</b></p></div></div>
+<p class="note r">Ilustração didática dos dois exemplos tocados aqui, não um mapa universal dos gêneros.</p>
+</section>
+
+<section class="s" data-n="O que acontece por dentro? O som chega ao ouvido e é decodificado no córtex auditivo. Aciona amígdala e hipocampo, que cuidam de emoção e memória. O sistema de recompensa libera dopamina. E o corpo responde: batimentos, respiração, arrepios. Importante: emoção percebida, emoção sentida e interpretação de uma cena não são a mesma coisa.">
+<p class="kick">Parte 4 · Cérebro e corpo</p><h2>Do som à emoção: o <em>caminho</em></h2>
+<div class="flow">
+<div class="nd r"><div class="c">1</div><h3>Som</h3><p>Ritmo, notas e timbre chegam ao ouvido.</p></div>
+<div class="nd r"><div class="c">2</div><h3>Córtex auditivo</h3><p>O cérebro decodifica pulso, melodia e harmonia.</p></div>
+<div class="nd r"><div class="c">3</div><h3>Amígdala e hipocampo</h3><p>Emoção e memória entram em ação.</p></div>
+<div class="nd r"><div class="c">4</div><h3>Recompensa</h3><p>Dopamina: expectativa e prazer.</p></div>
+<div class="nd r"><div class="c">5</div><h3>Corpo</h3><p>Batimentos, respiração, arrepios.</p></div>
+</div>
+<div class="warn r">Emoção <b>percebida</b> na música ≠ emoção <b>sentida</b> ≠ <b>interpretação</b> de uma cena. Cultura, contexto e história pessoal participam.</div>
+</section>
+
+<section class="s" data-n="E existem evidências. Blood e Zatorre mostraram que música que dá arrepios ativa regiões de recompensa e emoção. Salimpoor e colegas viram dopamina sendo liberada tanto na expectativa quanto no pico de prazer. Bernardi e colegas observaram que trechos mais rápidos aceleram respiração e coração, e que pausas de silêncio relaxam. E Boltz, Labbé e Carraturo mostram que trilha, modo e cultura modulam a interpretação, sem regra absoluta.">
+<p class="kick">Parte 5 · Evidências científicas</p><h2>O que a pesquisa <em>mostra</em></h2>
+<div class="g2">
+<div class="card r"><div class="au">Blood &amp; Zatorre (2001)</div><div class="jr">PNAS</div><p>Música que causa arrepios ativa regiões ligadas a recompensa e emoção, as mesmas de outros prazeres.</p></div>
+<div class="card r"><div class="au">Salimpoor et al. (2011)</div><div class="jr">Nature Neuroscience</div><p>Dopamina é liberada na antecipação e no pico de prazer: o cérebro “espera” o clímax.</p></div>
+<div class="card r"><div class="au">Bernardi, Porta &amp; Sleight (2006)</div><div class="jr">Heart</div><p>Trechos mais rápidos elevaram respiração e frequência cardíaca; pausas de silêncio relaxaram.</p></div>
+<div class="card r"><div class="au">Boltz (2001) · Labbé et al. (2020) · Carraturo et al. (2025)</div><div class="jr">Trilha, modo e andamento</div><p>Trilhas alteram interpretação e memória de cenas; modo, andamento e cultura modulam o efeito.</p><div class="doi">doi:10.1525/mp.2001.18.4.427 · 10.1177/0305735620906887 · 10.1016/j.plrev.2024.11.017</div></div>
+</div></section>
+
+<section class="s" data-n="Ritmo, harmonia, timbre e dinâmica constroem a atmosfera. Acordes e gêneros mexem com o cérebro e com o corpo. (pausa) Na próxima vez que ouvir uma música, pergunte: o que ela está fazendo comigo?">
+<p class="kick">Conclusão</p>
+<h1 style="font-size:58px;margin:10px 0">A música não acompanha só o que ouvimos.<br>Ela muda o <em>que sentimos</em>.</h1>
+<p class="r" style="font-size:24px">Ritmo · Harmonia · Timbre · Dinâmica → cérebro e corpo → emoção.</p>
+<div class="refs r">
+<p>Blood &amp; Zatorre (2001). PNAS 98(20). · Salimpoor et al. (2011). Nature Neuroscience 14. · Bernardi, Porta &amp; Sleight (2006). Heart 92. · Boltz (2001). Music Perception 18(4). · Labbé, Trost &amp; Grandjean (2020). Psychology of Music. · Carraturo et al. (2025). Physics of Life Reviews.</p>
+<p>Áudio: exemplos sintetizados no navegador (Web Audio API); “Roots Bloody Roots”, de Sepultura, e “Gary’s Theme”, na gravação de Bill Evans, reproduzidas a partir de arquivos de áudio locais. Integrantes: [nomes do grupo] · Técnicas de Apresentação Digital.</p>
+</div></section>
+
+<section class="s" style="justify-content:center;align-items:center;text-align:center" data-n="Obrigado pela atenção! Abrimos espaço para perguntas e comentários.">
+<p class="kick">Entre notas e emoções</p>
+<h1 style="font-size:120px;margin:24px 0"><em>Obrigado!</em></h1>
+<p style="font-size:28px;color:#c4c9e8;margin:8px 0">Por ouvir, sentir e compartilhar este momento.</p>
+<div style="width:110px;height:3px;background:linear-gradient(90deg,#8b5cf6,#4da3ff);border-radius:3px;margin:30px 0"></div>
+<p style="font-size:22px;color:#a5b4fc">Perguntas e comentários são bem-vindos.</p>
+</section>
+</div>
+
+<div id="nt"></div>
+<div id="hud"><button onclick="prev()">‹</button><span id="cnt"></span><div id="bar"><div id="pg"></div></div><span>← → navegar · N roteiro · M efeitos</span><button onclick="next()">›</button></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],DEF='139,92,246';
+let C,M,A,cur,NB,col=DEF,mute=false;
+function init(){if(C)return;C=new(window.AudioContext||window.webkitAudioContext)();M=C.createGain();M.gain.value=.8;A=C.createAnalyser();A.fftSize=128;M.connect(A);A.connect(C.destination);NB=C.createBuffer(1,C.sampleRate,C.sampleRate);const d=NB.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1}
+function stop(){['#rock-audio','#jazz-audio'].forEach(id=>{const audio=$(id);if(audio){audio.pause();audio.currentTime=0}});if(cur){const o=cur;o.gain.setTargetAtTime(0,C.currentTime,.05);setTimeout(()=>o.disconnect(),500);cur=null}col=DEF;$$('.pn').forEach(x=>x.classList.remove('pl'))}
+function bus(){init();C.resume();stop();cur=C.createGain();cur.connect(M);return cur}
+const hz=m=>440*2**((m-69)/12);
+function nt(b,m,t,d,o={}){const os=C.createOscillator(),g=C.createGain(),v=o.v??.15,a=o.a??.01;os.type=o.w||'triangle';os.frequency.value=hz(m);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+a);if(o.sus){g.gain.setValueAtTime(v,t+d-.05);g.gain.linearRampToValueAtTime(0,t+d)}else g.gain.exponentialRampToValueAtTime(.001,t+d);os.connect(g);g.connect(o.to||b);os.start(t);os.stop(t+d+.05)}
+function nz(b,t,d,type,fr,v){const s=C.createBufferSource(),f=C.createBiquadFilter(),g=C.createGain();s.buffer=NB;f.type=type;f.frequency.value=fr;g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+d);s.connect(f);f.connect(g);g.connect(b);s.start(t,Math.random()*.5);s.stop(t+d+.05)}
+function kick(b,t,v=.5){const o=C.createOscillator(),g=C.createGain();o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(40,t+.12);g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+.25);o.connect(g);g.connect(b);o.start(t);o.stop(t+.3)}
+function pn(b,ms,t,d,v){ms.forEach(m=>{nt(b,m,t,d,{v,a:.005});nt(b,m+12,t,d*.6,{v:v*.3,w:'sine'})})}
+function whoosh(){if(!C||mute)return;const t=C.currentTime,s=C.createBufferSource(),f=C.createBiquadFilter(),g=C.createGain();s.buffer=NB;f.type='bandpass';f.Q.value=2;f.frequency.setValueAtTime(300,t);f.frequency.exponentialRampToValueAtTime(4000,t+.35);g.gain.setValueAtTime(.001,t);g.gain.linearRampToValueAtTime(.18,t+.15);g.gain.exponentialRampToValueAtTime(.001,t+.4);s.connect(f);f.connect(g);g.connect(M);s.start(t);s.stop(t+.45)}
+function tick(){if(!C||mute)return;const t=C.currentTime,o=C.createOscillator(),g=C.createGain();o.frequency.value=880;g.gain.setValueAtTime(.06,t);g.gain.exponentialRampToValueAtTime(.001,t+.12);o.connect(g);g.connect(M);o.start(t);o.stop(t+.15)}
+function pad(){const b=bus(),t=C.currentTime+.2;[48,55,60,63,67].forEach(m=>nt(b,m,t,6,{w:'sine',v:.08,a:1.8}))}
+function pulse(bpm){const b=bus(),B=60/bpm,t=C.currentTime+.05;for(let i=0;i<Math.floor(4/B);i++){kick(b,t+i*B,.35);nt(b,72,t+i*B,.12,{w:'sine',v:.1})}}
+function timbre(w){const b=bus(),t=C.currentTime+.05,v={sine:.2,sawtooth:.07,square:.05}[w];[60,64,67,64,60,67,72].forEach((m,i)=>nt(b,m,t+i*.33,.32,{w,v}))}
+function dyn(){const b=bus(),t=C.currentTime+.05,g=C.createGain();g.gain.setValueAtTime(.01,t);g.gain.exponentialRampToValueAtTime(.7,t+3);g.gain.linearRampToValueAtTime(0,t+3.6);g.connect(b);[48,55,60,63].forEach(m=>nt(b,m,t,3.7,{w:'sawtooth',v:.07,a:.05,sus:1,to:g}))}
+const CH={maj:[60,64,67],min:[60,63,67],dim:[60,63,66]};
+function chord(k){const b=bus(),t=C.currentTime+.05;pn(b,CH[k],t,2.2,.13);nt(b,48,t,2.2,{v:.12});hl(CH[k],k=='min')}
+function hl(ms,chg){$$('#pk div').forEach(e=>e.classList.remove('on','chg'));$$('#pk div').forEach(e=>{if(ms.includes(+e.dataset.m)){e.classList.add('on');if(chg&&e.dataset.m=='63')e.classList.add('chg')}});clearTimeout(hl.t);hl.t=setTimeout(()=>$$('#pk div').forEach(e=>e.classList.remove('on','chg')),2400)}
+function compare(){chord('maj');setTimeout(()=>chord('min'),2600)}
+function glow(el,ms){const p=el.closest('.pn');clearTimeout(p.glowTimer);p.classList.add('pl');p.glowTimer=setTimeout(()=>p.classList.remove('pl'),ms)}
+function rock(el){
+ stop();const audio=$('#rock-audio');audio.volume=.4;audio.currentTime=6;
+ audio.ontimeupdate=()=>{if(audio.currentTime>=20)stop()};
+ audio.onended=()=>stop();
+ audio.play().then(()=>{col='255,77,141';el.closest('.pn').classList.add('pl')}).catch(()=>{$('#rock-status').textContent='Não foi possível carregar o áudio. Mantenha o arquivo WebM na mesma pasta da apresentação.'});
+}
+function jazz(el){
+ stop();const audio=$('#jazz-audio');audio.currentTime=0;
+ audio.ontimeupdate=()=>{if(audio.currentTime>=15)stop()};
+ audio.onended=()=>stop();
+ audio.play().then(()=>{col='77,163,255';el.closest('.pn').classList.add('pl')}).catch(()=>{$('#jazz-status').textContent='Não foi possível carregar o áudio. Mantenha o arquivo WebM na mesma pasta da apresentação.'});
+}
+// Piano
+const pk=$('#pk');[['Dó',60],['Ré',62],['Mi',64],['Fá',65],['Sol',67],['Lá',69],['Si',71],['Dó',72]].forEach((n,i)=>{const d=document.createElement('div');d.className='w';d.dataset.m=n[1];d.style.left=i*70+'px';d.textContent=n[0];pk.appendChild(d)});
+[[61,1],[63,2],[66,4],[68,5],[70,6]].forEach(n=>{const d=document.createElement('div');d.className='b';d.dataset.m=n[0];d.style.left=n[1]*70-22+'px';pk.appendChild(d)});
+$$('svg[data-w]').forEach(v=>{const w=v.dataset.w;let p='';for(let x=0;x<=120;x+=2){const ph=(x/30)%1,y=w=='sine'?Math.sin(ph*6.283):1-2*ph;p+=x+','+(20-y*14)+' '}v.setAttribute('viewBox','0 0 120 40');v.innerHTML='<polyline points="'+p+'" fill="none" stroke="#a5b4fc" stroke-width="2.5"/>'});
+for(let i=0;i<14;i++){const e=document.createElement('span');e.style.height=10+i*4+'px';e.style.animationDelay=i*.08+'s';$('#eq').appendChild(e)}
+// Deck
+const S=$$('.s'),T=['0:00–0:35','0:35–1:40','1:40–2:45','2:45–4:15','4:15–5:15','5:15–6:00','6:00–6:25','Encerramento'],R=i=>[...S[i].querySelectorAll(':scope > .r, :scope .r')];
+let s=0,k=0;
+function show(){S.forEach((e,i)=>e.classList.toggle('on',i==s));R(s).forEach((e,i)=>e.classList.toggle('on',i<k));$('#cnt').textContent=(s+1)+' / '+S.length+' · '+T[s];$('#pg').style.width=(s+1)/S.length*100+'%';$('#nt').textContent=S[s].dataset.n}
+function next(){init();if(k<R(s).length){const revealed=R(s)[k];k++;if(revealed.classList.contains('team')){if(!mute)pad()}else tick()}else if(s<S.length-1){s++;k=0;stop();whoosh()}show()}
+function prev(){if(k>0)k--;else if(s>0){s--;k=R(s).length;stop();whoosh()}show()}
+addEventListener('keydown',e=>{if(['ArrowRight',' ','PageDown'].includes(e.key)){e.preventDefault();next()}else if(['ArrowLeft','PageUp'].includes(e.key))prev();else if(e.key=='n'||e.key=='N')$('#nt').classList.toggle('show');else if(e.key=='m'||e.key=='M')mute=!mute;else if(e.key=='f'||e.key=='F')document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()});
+let tx=0;addEventListener('touchstart',e=>tx=e.touches[0].clientX);addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(d<-50)next();if(d>50)prev()});
+const st=$('#st'),cv=$('#cv'),cx=cv.getContext('2d');
+function fit(){const z=Math.min(innerWidth/1280,(innerHeight-40)/720);st.style.transform='scale('+z+')';st.style.left=(innerWidth-1280*z)/2+'px';st.style.top=(innerHeight-40-720*z)/2+'px';cv.width=innerWidth;cv.height=innerHeight}
+addEventListener('resize',fit);fit();show();
+function draw(){const w=cv.width,h=cv.height,d=new Uint8Array(64),n=64,bw=w/n,T=performance.now()/1000;if(A)A.getByteFrequencyData(d);cx.clearRect(0,0,w,h);let l=0;
+for(let i=0;i<n;i++){const v=d[i]/255;l+=v;const hh=(v*.5+.035+.025*Math.sin(T*1.4+i*.4))*h;cx.fillStyle='rgba('+col+','+(.16+v*.45)+')';cx.fillRect(i*bw+2,h-hh,bw-4,hh)}
+document.body.style.setProperty('--lv',(l/n).toFixed(3));requestAnimationFrame(draw)}draw();
+</script></body></html>
