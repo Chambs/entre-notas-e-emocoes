@@ -1,13 +1,13 @@
 # Roteiro de apresentação — Entre notas e emoções
 
-**Duração planejada: cerca de 6min25s**, incluindo os áudios, o vídeo, as demonstrações e as transições. As perguntas do público ficam fora desse tempo. Os horários são metas para ensaio; façam uma leitura cronometrada para ajustar ao ritmo do grupo.
+**Duração planejada: cerca de 6min40s**, incluindo os áudios, o vídeo, as demonstrações e as transições. As perguntas do público ficam fora desse tempo. Os horários são metas para ensaio; façam uma leitura cronometrada para ajustar ao ritmo do grupo.
 
 | Integrante | Slides | Intervalo | Tempo total |
 |---|---|---|---|
 | João Vitor Ferrenha | 1–2 · Abertura e fundamentos | 0:00–1:25 | 1min25s |
-| Matheus Feitosa | 3–4 · Acordes e contraste musical | 1:25–3:10 | 1min45s |
-| Raphaela de Paula | 5–7 · Cérebro, vídeo e evidências | 3:10–4:45 | 1min35s |
-| Isabela Martines | 8–11 · Mais evidências e encerramento | 4:45–6:25 | 1min40s |
+| Matheus Feitosa | 3–4 · Acordes e contraste musical | 1:25–3:25 | 2min |
+| Raphaela de Paula | 5–7 · Cérebro, vídeo e evidências | 3:25–5:00 | 1min35s |
+| Isabela Martines | 8–11 · Mais evidências e encerramento | 5:00–6:40 | 1min40s |
 
 ## Como conduzir
 
@@ -39,25 +39,35 @@ Se o ensaio ultrapassar 7 minutos, expliquem oralmente apenas o estudo de músic
 
 **Ação:** Tocar Crescendo e aguardar cerca de 4 segundos.
 
-> O Matheus vai mostrar como até uma única nota pode mudar nossa percepção.
+> O Matheus vai mostrar como uma sequência de acordes pode criar tensão e sensação de chegada.
 
-## Slide 3 — Acordes
+## Slide 3 — Acordes: formação e percurso
 
-**Matheus Feitosa · 1:25–2:10**
+**Matheus Feitosa · 1:25–2:25**
 
-> Um acorde reúne notas tocadas juntas. Aqui temos Dó maior, Dó menor e Dó diminuto. No maior, ouvimos Dó, Mi e Sol. No menor, o Mi desce meio tom e vira Mi bemol. Vamos ouvir essa mudança isoladamente.
+> Os acordes podem criar uma sensação de movimento: alguns parecem prolongar a música, enquanto outros dão a impressão de chegada. Vamos ouvir um exemplo, prestando atenção principalmente no final.
 
-**Ação:** Tocar Meio tom: Mi → Mi♭. São apenas as duas notas, destacadas no teclado, em cerca de 3 segundos.
+**Ação:** Toque “Ouvir o percurso” e aguarde terminar.
 
-> Na música tonal ocidental, o maior costuma sugerir abertura; o menor, introspecção. O diminuto acrescenta instabilidade e uma sensação de que algo precisa se resolver.
+> Essa sequência começa em Dó maior e passa para Lá menor. Eles compartilham duas notas, Dó e Mi, então a sonoridade muda mantendo uma conexão.
 
-**Ação:** Tocar Dó diminuto e aguardar cerca de 2 segundos.
+> A formação também faz diferença. A terça é uma distância entre notas: no acorde maior, são quatro semitons; no menor, três. Isso ajuda a dar a cada acorde sua característica.
 
-> Essas associações dependem também do contexto e da experiência de quem escuta.
+**Ação:** Revele os dois primeiros cartões.
+
+> Depois do Ré menor, chegamos ao Sol com sétima. Nele, Si e Fá formam um trítono, que traz tensão nesse contexto.
+
+**Ação:** Revele o terceiro cartão.
+
+> Na volta para Dó, o Si sobe para Dó e o Fá desce para Mi. Esse movimento ajuda a criar a sensação de conclusão que ouvimos. A harmonia constrói, assim, um percurso de expectativa e chegada.
+
+**Ação:** Revele a observação final.
+
+> A intensidade dessa sensação pode variar conforme nossa familiaridade com esse tipo de música.
 
 ## Slide 4 — Rock / Metal × Jazz
 
-**Matheus Feitosa · 2:10–3:10**
+**Matheus Feitosa · 2:25–3:25**
 
 > Agora vamos ouvir esses elementos em duas gravações. Primeiro, Roots Bloody Roots, do Sepultura: prestem atenção aos riffs graves, à distorção e à força da bateria.
 
@@ -71,7 +81,7 @@ Se o ensaio ultrapassar 7 minutos, expliquem oralmente apenas o estudo de músic
 
 ## Slide 5 — Cérebro e corpo
 
-**Raphaela de Paula · 3:10–3:40**
+**Raphaela de Paula · 3:25–3:55**
 
 > O som chega ao ouvido e é processado pelo sistema auditivo. Durante a escuta, redes ligadas à memória, à emoção e à recompensa também podem participar. É por isso que uma música pode trazer lembranças, gerar prazer ou provocar arrepios. Mas perceber tristeza numa música não significa necessariamente sentir tristeza: a resposta depende da pessoa e da situação.
 
@@ -79,7 +89,7 @@ Se o ensaio ultrapassar 7 minutos, expliquem oralmente apenas o estudo de músic
 
 ## Slide 6 — Vídeo de EEG
 
-**Raphaela de Paula · 3:40–4:10**
+**Raphaela de Paula · 3:55–4:25**
 
 > Neste trecho, sinais elétricos do cérebro são registrados durante a escuta. Observem a mudança quando o som fica mais dissonante.
 
@@ -89,7 +99,7 @@ Se o ensaio ultrapassar 7 minutos, expliquem oralmente apenas o estudo de músic
 
 ## Slide 7 — Evidências científicas
 
-**Raphaela de Paula · 4:10–4:45**
+**Raphaela de Paula · 4:25–5:00**
 
 > Esses efeitos também são investigados em estudos científicos. Blood e Zatorre relacionaram os arrepios musicais à atividade de regiões de recompensa e emoção. Salimpoor e colegas observaram liberação de dopamina em momentos de prazer musical e antecipação. Já Bernardi e colegas encontraram mudanças na respiração e nos batimentos conforme o andamento e as pausas. A Isabela traz mais exemplos para mostrar que essa relação é complexa.
 
@@ -97,7 +107,7 @@ Se o ensaio ultrapassar 7 minutos, expliquem oralmente apenas o estudo de músic
 
 ## Slide 8 — Mais evidências
 
-**Isabela Martines · 4:45–5:35**
+**Isabela Martines · 5:00–5:50**
 
 > Um estudo com 44 participantes mostrou que uma música percebida como triste também pode despertar sentimentos agradáveis. Outro encontrou respostas corporais diferentes para arrepios e lágrimas, embora ambos pudessem acompanhar prazer. Há também evidências de que o prazer depende da combinação entre expectativa e surpresa: um acorde inesperado pode agradar quando o contexto é previsível. Por fim, participantes Mafa, sem contato prévio com música ocidental, reconheceram alegria, tristeza e medo acima do acaso. Isso mostra reconhecimento de expressões musicais nessa tarefa, e não que todos tenham sentido as mesmas emoções.
 
@@ -105,7 +115,7 @@ Se o ensaio ultrapassar 7 minutos, expliquem oralmente apenas o estudo de músic
 
 ## Slide 9 — Conclusão
 
-**Isabela Martines · 5:35–6:10**
+**Isabela Martines · 5:50–6:40**
 
 > O que podemos levar dessa apresentação? O som cria expectativas, o corpo pode responder e cada pessoa dá sentido à experiência. Ritmo, harmonia, timbre e dinâmica participam desse processo, junto com nossas memórias e o contexto. Por isso, a música pode transformar a forma como sentimos um momento. Na próxima vez que vocês ouvirem uma canção, vale perguntar: o que esta música desperta em mim?
 
@@ -113,7 +123,7 @@ Se o ensaio ultrapassar 7 minutos, expliquem oralmente apenas o estudo de músic
 
 ## Slide 10 — Referências
 
-**Isabela Martines · 6:10–6:15**
+**Isabela Martines · 6:40–6:30**
 
 > Aqui estão as referências dos estudos e os créditos dos exemplos apresentados.
 
@@ -121,8 +131,8 @@ Se o ensaio ultrapassar 7 minutos, expliquem oralmente apenas o estudo de músic
 
 ## Slide 11 — Obrigado
 
-**Isabela Martines · 6:15–6:25**
+**Isabela Martines · 6:30–6:40**
 
 > Obrigado pela atenção! Ficamos à disposição para perguntas e comentários.
 
-**Ação:** Deixar o som de encerramento tocar e fazer uma breve pausa. A contagem de 6:25 termina antes das perguntas do público.
+**Ação:** Deixar o som de encerramento tocar e fazer uma breve pausa. A contagem de 6:40 termina antes das perguntas do público.

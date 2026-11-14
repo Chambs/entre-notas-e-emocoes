@@ -97,6 +97,19 @@ svg.w{width:100%;height:40px}
 .team div{display:flex;justify-content:space-between;gap:16px}
 .team span:last-child{white-space:nowrap}
 @media(max-width:700px){.team{grid-template-columns:1fr;max-width:440px;font-size:17px;gap:5px}}
+
+.harm-demo{width:560px;flex-shrink:0}
+.harm-path{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:0 0 14px}
+.harm-path>div{padding:9px 5px;background:rgba(255,255,255,.05);border:1px solid #454365;border-radius:12px;text-align:center;transition:.2s}
+.harm-path b{display:block;font-size:25px;color:#c4b5fd}
+.harm-path span{display:block;font-size:13px;color:#e8ebff}
+.harm-path small{display:block;font-size:11px;color:#aab3d8;margin-top:4px}
+.harm-path .playing{border-color:#c4b5fd;background:rgba(139,92,246,.35);box-shadow:0 0 20px #8b5cf644}
+.harm-path .playing[data-step="3"]{border-color:#fbbf24}
+#acordes h2{font-size:40px;margin-bottom:18px}
+#acordes .ci .card b{font-size:22px}
+#acordes .note{font-size:15px}
+.harm-status{font-size:16px;min-height:45px;margin-top:12px;color:#c4b5fd}
 </style></head><body>
 <canvas id="cv"></canvas>
 <div id="st">
@@ -125,7 +138,7 @@ FALA: Por fim, a dinâmica é a variação de volume. Neste exemplo, o som cresc
 
 [AÇÃO] Tocar Crescendo e aguardar cerca de 4 segundos.
 
-FALA: O Matheus vai mostrar como até uma única nota pode mudar nossa percepção.">
+FALA: O Matheus vai mostrar como uma sequência de acordes pode criar tensão e sensação de chegada.">
 <p class="kick">Parte 1 · Os fundamentos</p><h2>Quatro elementos constroem a <em>atmosfera</em></h2>
 <div class="g4">
 <div class="card r"><span class="num">01</span><h3>Ritmo</h3><div class="vis dots"><i></i><i></i></div><p>Andamento muda a sensação de energia e urgência.</p><button class="btn" onclick="pulse(60)">Lento · 60</button><button class="btn" onclick="pulse(150)">Rápido · 150</button></div>
@@ -134,28 +147,47 @@ FALA: O Matheus vai mostrar como até uma única nota pode mudar nossa percepç�
 <div class="card r"><span class="num">04</span><h3>Dinâmica</h3><div class="vis"><div class="eq" id="eq"></div></div><p>Volume que cresce cria expectativa e drama.</p><button class="btn" onclick="dyn()">Crescendo</button></div>
 </div></section>
 
-<section class="s" data-n="Matheus Feitosa | 1:25–2:10 | Acordes
+<section id="acordes" class="s" data-n="Matheus Feitosa | 1:25–2:25 | Acordes: formação e percurso
 
-FALA: Um acorde reúne notas tocadas juntas. Aqui temos Dó maior, Dó menor e Dó diminuto. No maior, ouvimos Dó, Mi e Sol. No menor, o Mi desce meio tom e vira Mi bemol. Vamos ouvir essa mudança isoladamente.
+FALA: Os acordes podem criar uma sensação de movimento: alguns parecem prolongar a música, enquanto outros dão a impressão de chegada. Vamos ouvir um exemplo, prestando atenção principalmente no final.
 
-[AÇÃO] Tocar Meio tom: Mi → Mi♭. São apenas as duas notas, destacadas no teclado, em cerca de 3 segundos.
+[AÇÃO] Toque “Ouvir o percurso” e aguarde terminar.
 
-FALA: Na música tonal ocidental, o maior costuma sugerir abertura; o menor, introspecção. O diminuto acrescenta instabilidade e uma sensação de que algo precisa se resolver.
+FALA: Essa sequência começa em Dó maior e passa para Lá menor. Eles compartilham duas notas, Dó e Mi, então a sonoridade muda mantendo uma conexão.
 
-[AÇÃO] Tocar Dó diminuto e aguardar cerca de 2 segundos.
+A formação também faz diferença. A terça é uma distância entre notas: no acorde maior, são quatro semitons; no menor, três. Isso ajuda a dar a cada acorde sua característica.
 
-FALA: Essas associações dependem também do contexto e da experiência de quem escuta.">
-<p class="kick">Parte 2 · Acordes</p><h2>Mude <em>uma nota</em>. Mude a sensação.</h2>
-<div class="row"><div><div class="pk" id="pk"></div>
-<button class="btn" onclick="chord('maj')">Dó maior</button><button class="btn" onclick="chord('min')">Dó menor</button><button class="btn" onclick="chord('dim')">Dó diminuto</button><button class="btn" onclick="halfStep()">Meio tom: Mi → Mi♭</button></div>
-<div class="ci">
-<div class="card r"><b>Maior · Dó Mi Sol</b><p>Brilho, estabilidade, abertura.</p></div>
-<div class="card r"><b>Menor · Dó Mi♭ Sol</b><p>Só uma nota desce: introspecção, seriedade.</p></div>
-<div class="card r"><b>Diminuto · Dó Mi♭ Sol♭</b><p>Instável: tensão e expectativa.</p></div>
-<p class="note r">Associações frequentes na música tonal ocidental, não leis universais.</p>
+[AÇÃO] Revele os dois primeiros cartões.
+
+FALA: Depois do Ré menor, chegamos ao Sol com sétima. Nele, Si e Fá formam um trítono, que traz tensão nesse contexto.
+
+[AÇÃO] Revele o terceiro cartão.
+
+FALA: Na volta para Dó, o Si sobe para Dó e o Fá desce para Mi. Esse movimento ajuda a criar a sensação de conclusão que ouvimos. A harmonia constrói, assim, um percurso de expectativa e chegada.
+
+[AÇÃO] Revele a observação final.
+
+FALA: A intensidade dessa sensação pode variar conforme nossa familiaridade com esse tipo de música.">
+<p class="kick">Parte 2 · Acordes</p><h2>Da formação à sensação: <em>tensão e repouso</em></h2>
+<div class="row"><div class="harm-demo">
+<div class="harm-path" aria-label="Sequência em Dó maior">
+<div data-step="0"><b>C</b><span>Dó maior</span><small>I · ponto de partida</small></div>
+<div data-step="1"><b>Am</b><span>Lá menor</span><small>vi · muda a cor</small></div>
+<div data-step="2"><b>Dm</b><span>Ré menor</span><small>ii · prepara</small></div>
+<div data-step="3"><b>G7</b><span>Sol com 7ª</span><small>V7 · tensão</small></div>
+<div data-step="4"><b>C</b><span>Dó maior</span><small>I · retorno</small></div>
+</div>
+<div class="pk" id="pk"></div>
+<button class="btn" onclick="harmonicJourney()">▶ Ouvir o percurso · 9 s</button>
+<p id="harm-status" class="harm-status" aria-live="polite">C → Am → Dm → G7 → C · escute a chegada ao último acorde.</p>
+</div><div class="ci">
+<div class="card r"><b>1 · A terça muda a cor</b><p>Maior: fundamental → terça = 4 semitons.<br>Menor: 3 semitons. Essa distância participa do caráter do acorde.</p></div>
+<div class="card r"><b>2 · Notas comuns conectam</b><p>C = Dó · Mi · Sol<br>Am = Lá · Dó · Mi<br>Dó e Mi permanecem: contraste com continuidade.</p></div>
+<div class="card r"><b>3 · A sétima pede uma chegada</b><p>G7 = Sol · Si · Ré · Fá.<br>O trítono Si–Fá cria tensão: Si → Dó e Fá → Mi conduzem ao repouso em C.</p></div>
+<p class="note r">Na música tonal ocidental, o contexto cria expectativas. Repouso, surpresa e emoção variam com a escuta.</p>
 </div></div></section>
 
-<section id="contraste" class="s" data-n="Matheus Feitosa | 2:10–3:10 | Rock / Metal × Jazz
+<section id="contraste" class="s" data-n="Matheus Feitosa | 2:25–3:25 | Rock / Metal × Jazz
 
 FALA: Agora vamos ouvir esses elementos em duas gravações. Primeiro, Roots Bloody Roots, do Sepultura: prestem atenção aos riffs graves, à distorção e à força da bateria.
 
@@ -189,7 +221,7 @@ FALA: Esses exemplos podem sugerir energia ou introspecção, mas um gênero nã
 <p class="note r">Ilustração didática dos dois exemplos tocados aqui, não um mapa universal dos gêneros.</p>
 </section>
 
-<section class="s" data-n="Raphaela de Paula | 3:10–3:40 | Cérebro e corpo
+<section class="s" data-n="Raphaela de Paula | 3:25–3:55 | Cérebro e corpo
 
 FALA: O som chega ao ouvido e é processado pelo sistema auditivo. Durante a escuta, redes ligadas à memória, à emoção e à recompensa também podem participar. É por isso que uma música pode trazer lembranças, gerar prazer ou provocar arrepios. Mas perceber tristeza numa música não significa necessariamente sentir tristeza: a resposta depende da pessoa e da situação.
 
@@ -205,7 +237,7 @@ FALA: O som chega ao ouvido e é processado pelo sistema auditivo. Durante a esc
 <div class="warn r">Emoção <b>percebida</b> na música ≠ emoção <b>sentida</b> ≠ <b>interpretação</b> de uma cena. Cultura, contexto e história pessoal participam.</div>
 </section>
 
-<section class="s" data-n="Raphaela de Paula | 3:40–4:10 | Vídeo de EEG
+<section class="s" data-n="Raphaela de Paula | 3:55–4:25 | Vídeo de EEG
 
 FALA: Neste trecho, sinais elétricos do cérebro são registrados durante a escuta. Observem a mudança quando o som fica mais dissonante.
 
@@ -221,7 +253,7 @@ Seu navegador não conseguiu reproduzir o vídeo.
 <p class="note" style="margin-top:5px">Fonte: Alan Harvey · Your brain on music · TEDxPerth. O EEG registra sinais elétricos; não identifica uma emoção por si só.</p>
 </section>
 
-<section class="s" data-n="Raphaela de Paula | 4:10–4:45 | Evidências científicas
+<section class="s" data-n="Raphaela de Paula | 4:25–5:00 | Evidências científicas
 
 FALA: Esses efeitos também são investigados em estudos científicos. Blood e Zatorre relacionaram os arrepios musicais à atividade de regiões de recompensa e emoção. Salimpoor e colegas observaram liberação de dopamina em momentos de prazer musical e antecipação. Já Bernardi e colegas encontraram mudanças na respiração e nos batimentos conforme o andamento e as pausas. A Isabela traz mais exemplos para mostrar que essa relação é complexa.
 
@@ -234,7 +266,7 @@ FALA: Esses efeitos também são investigados em estudos científicos. Blood e Z
 <div class="card r"><div class="au">Boltz (2001) · Labbé et al. (2020) · Carraturo et al. (2025)</div><div class="jr">Trilha, modo e andamento</div><p>Trilhas alteram interpretação e memória de cenas; modo, andamento e cultura modulam o efeito.</p><div class="doi">doi:10.1525/mp.2001.18.4.427 · 10.1177/0305735620906887 · 10.1016/j.plrev.2024.11.017</div></div>
 </div></section>
 
-<section class="s evidence-more" data-n="Isabela Martines | 4:45–5:35 | Mais evidências
+<section class="s evidence-more" data-n="Isabela Martines | 5:00–5:50 | Mais evidências
 
 FALA: Um estudo com 44 participantes mostrou que uma música percebida como triste também pode despertar sentimentos agradáveis. Outro encontrou respostas corporais diferentes para arrepios e lágrimas, embora ambos pudessem acompanhar prazer. Há também evidências de que o prazer depende da combinação entre expectativa e surpresa: um acorde inesperado pode agradar quando o contexto é previsível. Por fim, participantes Mafa, sem contato prévio com música ocidental, reconheceram alegria, tristeza e medo acima do acaso. Isso mostra reconhecimento de expressões musicais nessa tarefa, e não que todos tenham sentido as mesmas emoções.
 
@@ -249,7 +281,7 @@ FALA: Um estudo com 44 participantes mostrou que uma música percebida como tris
 <p class="note" style="margin-top:12px">Resultados de estudos específicos; as respostas variam com a pessoa, a música e o contexto.</p>
 </section>
 
-<section class="s closing" data-n="Isabela Martines | 5:35–6:10 | Conclusão
+<section class="s closing" data-n="Isabela Martines | 5:50–6:25 | Conclusão
 
 FALA: O que podemos levar dessa apresentação? O som cria expectativas, o corpo pode responder e cada pessoa dá sentido à experiência. Ritmo, harmonia, timbre e dinâmica participam desse processo, junto com nossas memórias e o contexto. Por isso, a música pode transformar a forma como sentimos um momento. Na próxima vez que vocês ouvirem uma canção, vale perguntar: o que esta música desperta em mim?
 
@@ -266,7 +298,7 @@ FALA: O que podemos levar dessa apresentação? O som cria expectativas, o corpo
 <div class="closing-question r"><span>Na próxima vez<br>que ouvir uma música</span><p>O que esta música desperta em mim?</p></div>
 </section>
 
-<section class="s bibliography" data-n="Isabela Martines | 6:10–6:15 | Referências
+<section class="s bibliography" data-n="Isabela Martines | 6:25–6:30 | Referências
 
 FALA: Aqui estão as referências dos estudos e os créditos dos exemplos apresentados.
 
@@ -277,13 +309,14 @@ FALA: Aqui estão as referências dos estudos e os créditos dos exemplos aprese
 <p>Kawakami et al. (2013). Frontiers in Psychology 4:311. · Mori &amp; Iwanaga (2017). Scientific Reports 7:46063. · Cheung et al. (2019). Current Biology 29. · Fritz et al. (2009). Current Biology 19:573–576. </p>
 <p>Áudio: exemplos sintetizados no navegador (Web Audio API); “Roots Bloody Roots”, de Sepultura, e “Gary’s Theme”, na gravação de Bill Evans, reproduzidas a partir de arquivos de áudio locais. Vídeo: trecho de “Your brain on music”, Alan Harvey, TEDxPerth. Técnicas de Apresentação Digital.</p>
 </div>
+<p style="font-size:12px;margin-top:5px">Teoria harmônica: <a href="https://viva.pressbooks.pub/openmusictheory/chapter/strengthening-endings-with-v7/" target="_blank" rel="noopener" style="color:#a5b4fc">Open Music Theory · Strengthening Endings with V⁷</a>.</p>
 </section>
 
-<section id="thanks" class="s" style="justify-content:center;align-items:center;text-align:center" data-n="Isabela Martines | 6:15–6:25 | Obrigado
+<section id="thanks" class="s" style="justify-content:center;align-items:center;text-align:center" data-n="Isabela Martines | 6:30–6:40 | Obrigado
 
 FALA: Obrigado pela atenção! Ficamos à disposição para perguntas e comentários.
 
-[AÇÃO] Deixar o som de encerramento tocar e fazer uma breve pausa. A contagem de 6:25 termina antes das perguntas do público.">
+[AÇÃO] Deixar o som de encerramento tocar e fazer uma breve pausa. A contagem de 6:40 termina antes das perguntas do público.">
 <p class="kick">Entre notas e emoções</p>
 <h1 style="font-size:120px;margin:24px 0"><em>Obrigado!</em></h1>
 <p style="font-size:28px;color:#c4c9e8;margin:8px 0">Por ouvir, sentir e compartilhar este momento.</p>
@@ -299,7 +332,7 @@ FALA: Obrigado pela atenção! Ficamos à disposição para perguntas e comentá
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],DEF='139,92,246';
 let C,M,A,cur,NB,col=DEF,mute=false;
 function init(){if(C)return;C=new(window.AudioContext||window.webkitAudioContext)();M=C.createGain();M.gain.value=.8;A=C.createAnalyser();A.fftSize=128;M.connect(A);A.connect(C.destination);NB=C.createBuffer(1,C.sampleRate,C.sampleRate);const d=NB.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1}
-function stop(except=null){['#rock-audio','#jazz-audio','#brain-video'].forEach(id=>{const audio=$(id);if(audio&&audio!==except){audio.pause();audio.currentTime=0}});if(cur){const o=cur;o.gain.setTargetAtTime(0,C.currentTime,.05);setTimeout(()=>o.disconnect(),500);cur=null}col=DEF;$$('.pn').forEach(x=>x.classList.remove('pl'))}
+function stop(except=null){clearTimeout(hl.t);$$('#pk div').forEach(e=>e.classList.remove('on','chg'));$$('.harm-path>div').forEach(e=>e.classList.remove('playing'));if($('#harm-status'))$('#harm-status').textContent='C → Am → Dm → G7 → C · escute a chegada ao último acorde.';['#rock-audio','#jazz-audio','#brain-video'].forEach(id=>{const audio=$(id);if(audio&&audio!==except){audio.pause();audio.currentTime=0}});if(cur){const o=cur;o.gain.setTargetAtTime(0,C.currentTime,.05);setTimeout(()=>o.disconnect(),500);cur=null}col=DEF;$$('.pn').forEach(x=>x.classList.remove('pl'))}
 function bus(){init();C.resume();stop();cur=C.createGain();cur.connect(M);return cur}
 const hz=m=>440*2**((m-69)/12);
 function nt(b,m,t,d,o={}){const os=C.createOscillator(),g=C.createGain(),v=o.v??.15,a=o.a??.01;os.type=o.w||'triangle';os.frequency.value=hz(m);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+a);if(o.sus){g.gain.setValueAtTime(v,t+d-.05);g.gain.linearRampToValueAtTime(0,t+d)}else g.gain.exponentialRampToValueAtTime(.001,t+d);os.connect(g);g.connect(o.to||b);os.start(t);os.stop(t+d+.05)}
@@ -327,6 +360,12 @@ function dyn(){const b=bus(),t=C.currentTime+.05,g=C.createGain();g.gain.setValu
 const CH={maj:[60,64,67],min:[60,63,67],dim:[60,63,66]};
 function chord(k){const b=bus(),t=C.currentTime+.05;pn(b,CH[k],t,2.2,.13);nt(b,48,t,2.2,{v:.12});hl(CH[k],k=='min')}
 function hl(ms,chg){$$('#pk div').forEach(e=>e.classList.remove('on','chg'));$$('#pk div').forEach(e=>{if(ms.includes(+e.dataset.m)){e.classList.add('on');if(chg&&e.dataset.m=='63')e.classList.add('chg')}});clearTimeout(hl.t);hl.t=setTimeout(()=>$$('#pk div').forEach(e=>e.classList.remove('on','chg')),2400)}
+function harmonicJourney(){
+ const b=bus(),t=C.currentTime+.05;
+ const steps=[{notes:[60,64,67],bass:48,text:'C · Dó–Mi–Sol: ponto de partida.'},{notes:[60,64,69],bass:45,text:'Am · Lá–Dó–Mi: outra cor, com Dó e Mi em comum.'},{notes:[62,65,69],bass:50,text:'Dm · Ré–Fá–Lá: prepara a chegada da dominante.'},{notes:[62,65,67,71],bass:43,text:'G7 · Sol–Si–Ré–Fá: escute a tensão de Si e Fá.'},{notes:[60,64,67,72],bass:48,text:'C · Si → Dó; Fá → Mi: resolução e sensação de chegada.'}];
+ steps.forEach((step,i)=>{const delay=i*1.5,d=i===4?2.5:1.4;pn(b,step.notes,t+delay,d,.085);nt(b,step.bass,t+delay,d,{w:'sine',v:.12});setTimeout(()=>{if(cur!==b)return;hl(step.notes,false);$$('.harm-path>div').forEach((el,j)=>el.classList.toggle('playing',j===i));$('#harm-status').textContent=step.text},50+delay*1000)});
+ setTimeout(()=>{if(cur!==b)return;$$('.harm-path>div').forEach(e=>e.classList.remove('playing'))},8800);
+}
 function halfStep(){const b=bus(),t=C.currentTime+.05;pn(b,[64],t,1.1,.13);pn(b,[63],t+1.4,1.1,.13);hl([64],false);setTimeout(()=>{if(cur===b)hl([63],true)},1450)}
 function glow(el,ms){const p=el.closest('.pn');clearTimeout(p.glowTimer);p.classList.add('pl');p.glowTimer=setTimeout(()=>p.classList.remove('pl'),ms)}
 function rock(el){
@@ -347,7 +386,7 @@ const pk=$('#pk');[['Dó',60],['Ré',62],['Mi',64],['Fá',65],['Sol',67],['Lá',
 $$('svg[data-w]').forEach(v=>{const w=v.dataset.w;let p='';for(let x=0;x<=120;x+=2){const ph=(x/30)%1,y=w=='sine'?Math.sin(ph*6.283):1-2*ph;p+=x+','+(20-y*14)+' '}v.setAttribute('viewBox','0 0 120 40');v.innerHTML='<polyline points="'+p+'" fill="none" stroke="#a5b4fc" stroke-width="2.5"/>'});
 for(let i=0;i<14;i++){const e=document.createElement('span');e.style.height=10+i*4+'px';e.style.animationDelay=i*.08+'s';$('#eq').appendChild(e)}
 // Deck
-const S=$$('.s'),T=["0:00–0:20 · João", "0:20–1:25 · João", "1:25–2:10 · Matheus", "2:10–3:10 · Matheus", "3:10–3:40 · Raphaela", "3:40–4:10 · Raphaela", "4:10–4:45 · Raphaela", "4:45–5:35 · Isabela", "5:35–6:10 · Isabela", "6:10–6:15 · Isabela", "6:15–6:25 · Isabela"],R=i=>[...S[i].querySelectorAll(':scope > .r, :scope .r')];
+const S=$$('.s'),T=["0:00–0:20 · João", "0:20–1:25 · João", "1:25–2:25 · Matheus", "2:25–3:25 · Matheus", "3:25–3:55 · Raphaela", "3:55–4:25 · Raphaela", "4:25–5:00 · Raphaela", "5:00–5:50 · Isabela", "5:50–6:25 · Isabela", "6:25–6:30 · Isabela", "6:30–6:40 · Isabela"],R=i=>[...S[i].querySelectorAll(':scope > .r, :scope .r')];
 let s=0,k=0;
 function show(){S.forEach((e,i)=>e.classList.toggle('on',i==s));R(s).forEach((e,i)=>e.classList.toggle('on',i<k));$('#cnt').textContent=(s+1)+' / '+S.length+' · '+T[s];$('#pg').style.width=(s+1)/S.length*100+'%';$('#nt').textContent=S[s].dataset.n}
 function next(){init();if(k<R(s).length){const revealed=R(s)[k];k++;if(revealed.classList.contains('team')){if(!mute)pad()}else tick()}else if(s<S.length-1){s++;k=0;stop();if(S[s].id==='thanks')closingSound();else whoosh()}show()}
