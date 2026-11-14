@@ -77,7 +77,7 @@ svg.w{width:100%;height:40px}
 #pg{height:100%;width:0;background:linear-gradient(90deg,#8b5cf6,#3b82f6);transition:.4s}
 #hud button{background:none;border:1px solid rgba(255,255,255,.25);color:#fff;width:34px;height:30px;border-radius:8px;cursor:pointer;font-size:18px}
 #nt{position:fixed;left:50%;bottom:54px;transform:translateX(-50%);max-width:880px;width:calc(100% - 30px);background:rgba(10,12,28,.95);border:1px solid rgba(139,92,246,.5);border-radius:12px;padding:14px 18px;font-size:16px;line-height:1.45;display:none;z-index:6}
-#nt.show{display:block}
+#nt.show{display:block;white-space:pre-line;max-height:65vh;overflow-y:auto}
 
 .closing-layout{display:grid;grid-template-columns:1.15fr 1fr;gap:62px;align-items:center;flex:1;margin:20px 0 26px}
 .closing-copy h2{font-size:56px;line-height:1.08;letter-spacing:-.035em;margin:0 0 22px}
@@ -101,13 +101,31 @@ svg.w{width:100%;height:40px}
 <canvas id="cv"></canvas>
 <div id="st">
 
-<section class="s" style="justify-content:center;text-align:center;align-items:center" data-n="(Calma, devagar.) Pense numa música que te deixa animado… e noutra que te deixa calmo. (pausa) O que, exatamente, o som faz com a gente? Hoje vamos ouvir, comparar e entender. Esta apresentação é o experimento.">
+<section class="s" style="justify-content:center;text-align:center;align-items:center" data-n="João Vitor Ferrenha | 0:00–0:20 | Capa
+
+FALA: Bom dia! Nós somos Isabela, Raphaela, João Vitor e Matheus. Nosso tema é como a música influencia o que sentimos. Pensem em uma música que anima vocês e em outra que traz calma. O que muda entre elas?
+
+[AÇÃO] Revelar os nomes, deixando o som de abertura acompanhar a apresentação do grupo.">
 <p class="kick">Técnicas de Apresentação Digital</p>
 <h1>Entre notas e emoções:<br><em>como a música influencia o que sentimos</em></h1>
 <div class="team r" aria-label="Integrantes do grupo"><div><span>Isabela Martines</span><span>23.01680-9</span></div><div><span>Raphaela de Paula</span><span>22.01804-2</span></div><div><span>João Vitor Ferrenha</span><span>22.00085-2</span></div><div><span>Matheus Feitosa</span><span>20.00628-4</span></div></div>
 </section>
 
-<section class="s" data-n="Quatro elementos constroem a atmosfera de qualquer música. Ritmo: lento acalma, rápido acelera. (toque os dois) Harmonia: a combinação das notas. (toque maior e menor) Timbre: a identidade do som, a mesma melodia com outra textura. E dinâmica: o volume que cresce cria expectativa. (toque o crescendo)">
+<section class="s" data-n="João Vitor Ferrenha | 0:20–1:25 | Quatro elementos
+
+FALA: Podemos começar por quatro elementos. O ritmo organiza os sons no tempo, e o andamento indica a velocidade da pulsação. Vamos ouvir uma pulsação lenta e outra rápida.
+
+[AÇÃO] Tocar Lento · 60 e esperar terminar; depois tocar Rápido · 150. São aproximadamente 8 segundos ao todo.
+
+FALA: Essa mudança pode alterar a sensação de energia. A harmonia é a combinação de notas, que pode sugerir estabilidade ou tensão. Já o timbre é a identidade do som: é o que diferencia um piano de uma guitarra, por exemplo.
+
+[AÇÃO] Tocar Suave e Brilhante, esperando cada exemplo terminar: aproximadamente 5 segundos.
+
+FALA: Por fim, a dinâmica é a variação de volume. Neste exemplo, o som cresce e cria expectativa.
+
+[AÇÃO] Tocar Crescendo e aguardar cerca de 4 segundos.
+
+FALA: O Matheus vai mostrar como até uma única nota pode mudar nossa percepção.">
 <p class="kick">Parte 1 · Os fundamentos</p><h2>Quatro elementos constroem a <em>atmosfera</em></h2>
 <div class="g4">
 <div class="card r"><span class="num">01</span><h3>Ritmo</h3><div class="vis dots"><i></i><i></i></div><p>Andamento muda a sensação de energia e urgência.</p><button class="btn" onclick="pulse(60)">Lento · 60</button><button class="btn" onclick="pulse(150)">Rápido · 150</button></div>
@@ -116,10 +134,20 @@ svg.w{width:100%;height:40px}
 <div class="card r"><span class="num">04</span><h3>Dinâmica</h3><div class="vis"><div class="eq" id="eq"></div></div><p>Volume que cresce cria expectativa e drama.</p><button class="btn" onclick="dyn()">Crescendo</button></div>
 </div></section>
 
-<section class="s" data-n="Um acorde é um conjunto de notas tocadas juntas. Dó maior: Dó, Mi, Sol. (toque) Agora só uma nota muda: o Mi vira Mi bemol. (toque) Mesmo instrumento, mesma duração, outra sensação. E o acorde diminuto soa instável, como se pedisse uma resolução. Atenção: isso vale para a música ocidental, e nenhum acorde decide a emoção sozinho.">
+<section class="s" data-n="Matheus Feitosa | 1:25–2:10 | Acordes
+
+FALA: Um acorde reúne notas tocadas juntas. Aqui temos Dó maior, Dó menor e Dó diminuto. No maior, ouvimos Dó, Mi e Sol. No menor, o Mi desce meio tom e vira Mi bemol. Vamos ouvir essa mudança isoladamente.
+
+[AÇÃO] Tocar Meio tom: Mi → Mi♭. São apenas as duas notas, destacadas no teclado, em cerca de 3 segundos.
+
+FALA: Na música tonal ocidental, o maior costuma sugerir abertura; o menor, introspecção. O diminuto acrescenta instabilidade e uma sensação de que algo precisa se resolver.
+
+[AÇÃO] Tocar Dó diminuto e aguardar cerca de 2 segundos.
+
+FALA: Essas associações dependem também do contexto e da experiência de quem escuta.">
 <p class="kick">Parte 2 · Acordes</p><h2>Mude <em>uma nota</em>. Mude a sensação.</h2>
 <div class="row"><div><div class="pk" id="pk"></div>
-<button class="btn" onclick="chord('maj')">Dó maior</button><button class="btn" onclick="chord('min')">Dó menor</button><button class="btn" onclick="chord('dim')">Dó diminuto</button><button class="btn" onclick="compare()">Comparar: Mi → Mi♭</button></div>
+<button class="btn" onclick="chord('maj')">Dó maior</button><button class="btn" onclick="chord('min')">Dó menor</button><button class="btn" onclick="chord('dim')">Dó diminuto</button><button class="btn" onclick="halfStep()">Meio tom: Mi → Mi♭</button></div>
 <div class="ci">
 <div class="card r"><b>Maior · Dó Mi Sol</b><p>Brilho, estabilidade, abertura.</p></div>
 <div class="card r"><b>Menor · Dó Mi♭ Sol</b><p>Só uma nota desce: introspecção, seriedade.</p></div>
@@ -127,7 +155,17 @@ svg.w{width:100%;height:40px}
 <p class="note r">Associações frequentes na música tonal ocidental, não leis universais.</p>
 </div></div></section>
 
-<section class="s" data-n="Agora o contraste máximo. Rock e metal: Roots Bloody Roots, do Sepultura, tem cerca de 120 batidas por minuto, riffs graves e distorcidos, baixo e bateria com forte acentuação rítmica. (toque) Energia, força, adrenalina. Jazz: Gary’s Theme, na gravação de Bill Evans, apresenta piano delicado, ritmo de valsa e harmonia expressiva. (toque) Introspecção, suavidade, nostalgia. Escolhas diferentes de ritmo, harmonia, timbre e dinâmica. Mas cuidado: nenhum gênero tem uma emoção só.">
+<section id="contraste" class="s" data-n="Matheus Feitosa | 2:10–3:10 | Rock / Metal × Jazz
+
+FALA: Agora vamos ouvir esses elementos em duas gravações. Primeiro, Roots Bloody Roots, do Sepultura: prestem atenção aos riffs graves, à distorção e à força da bateria.
+
+[AÇÃO] Tocar o rock e esperar o trecho completo, do segundo 6 ao 20: 14 segundos.
+
+FALA: Em Gary’s Theme, de Bill Evans, observem o piano e a delicadeza da interpretação.
+
+[AÇÃO] Tocar o jazz e esperar os 15 segundos completos.
+
+FALA: Esses exemplos podem sugerir energia ou introspecção, mas um gênero não tem uma emoção única. A Raphaela vai explicar como essa experiência envolve o cérebro e o corpo.">
 <p class="kick">Parte 3 · Contraste</p><h2><span style="color:#ff4d8d">Rock / Metal</span> × <span style="color:#4da3ff">Jazz</span>: os mesmos elementos, escolhas diferentes</h2>
 <div style="display:flex;gap:26px;flex:1">
 <div class="pn r" style="--c:#ff4d8d"><h3>Rock / Metal</h3><button class="btn" onclick="rock(this)">▶ Ouvir</button>
@@ -151,7 +189,11 @@ svg.w{width:100%;height:40px}
 <p class="note r">Ilustração didática dos dois exemplos tocados aqui, não um mapa universal dos gêneros.</p>
 </section>
 
-<section class="s" data-n="O que acontece por dentro? O som chega ao ouvido e é decodificado no córtex auditivo. Aciona amígdala e hipocampo, que cuidam de emoção e memória. O sistema de recompensa libera dopamina. E o corpo responde: batimentos, respiração, arrepios. Importante: emoção percebida, emoção sentida e interpretação de uma cena não são a mesma coisa.">
+<section class="s" data-n="Raphaela de Paula | 3:10–3:40 | Cérebro e corpo
+
+FALA: O som chega ao ouvido e é processado pelo sistema auditivo. Durante a escuta, redes ligadas à memória, à emoção e à recompensa também podem participar. É por isso que uma música pode trazer lembranças, gerar prazer ou provocar arrepios. Mas perceber tristeza numa música não significa necessariamente sentir tristeza: a resposta depende da pessoa e da situação.
+
+[AÇÃO] Revelar as etapas enquanto explica, sem ler todos os textos dos cartões.">
 <p class="kick">Parte 4 · Cérebro e corpo</p><h2>Do som à emoção: o <em>caminho</em></h2>
 <div class="flow">
 <div class="nd r"><div class="c">1</div><h3>Som</h3><p>Ritmo, notas e timbre chegam ao ouvido.</p></div>
@@ -163,7 +205,13 @@ svg.w{width:100%;height:40px}
 <div class="warn r">Emoção <b>percebida</b> na música ≠ emoção <b>sentida</b> ≠ <b>interpretação</b> de uma cena. Cultura, contexto e história pessoal participam.</div>
 </section>
 
-<section class="s" data-n="Até agora, ouvimos como as escolhas musicais mudam a nossa percepção. Neste trecho da palestra de Alan Harvey, um participante usa uma touca de EEG para registrar sinais elétricos do cérebro durante a escuta. Observem o que muda no som e no registro quando a música se torna mais dissonante. (Reproduzir o vídeo.) É uma demonstração de atividade cerebral; o traçado não revela sozinho uma emoção específica e não representa a resposta de todas as pessoas.">
+<section class="s" data-n="Raphaela de Paula | 3:40–4:10 | Vídeo de EEG
+
+FALA: Neste trecho, sinais elétricos do cérebro são registrados durante a escuta. Observem a mudança quando o som fica mais dissonante.
+
+[AÇÃO] Reproduzir o vídeo inteiro, de aproximadamente 16 segundos. Ficar em silêncio durante a reprodução.
+
+FALA: O EEG mostra atividade elétrica; ele não identifica uma emoção sozinho.">
 <p class="kick">Parte 4 · A escuta em EEG</p><h2>Quando a música muda, <em>o sinal também muda</em></h2>
 <video id="brain-video" controls playsinline preload="metadata" onplay="stop(this)" style="display:block;width:100%;height:430px;object-fit:contain;background:#05060b;border:1px solid rgba(165,180,252,.2);border-radius:18px" aria-label="Trecho de Your brain on music, de Alan Harvey, TEDxPerth">
 <source src="ted-brain_music.mp4" type="video/mp4">
@@ -173,7 +221,11 @@ Seu navegador não conseguiu reproduzir o vídeo.
 <p class="note" style="margin-top:5px">Fonte: Alan Harvey · Your brain on music · TEDxPerth. O EEG registra sinais elétricos; não identifica uma emoção por si só.</p>
 </section>
 
-<section class="s" data-n="E existem evidências. Blood e Zatorre mostraram que música que dá arrepios ativa regiões de recompensa e emoção. Salimpoor e colegas viram dopamina sendo liberada tanto na expectativa quanto no pico de prazer. Bernardi e colegas observaram que trechos mais rápidos aceleram respiração e coração, e que pausas de silêncio relaxam. E Boltz, Labbé e Carraturo mostram que trilha, modo e cultura modulam a interpretação, sem regra absoluta.">
+<section class="s" data-n="Raphaela de Paula | 4:10–4:45 | Evidências científicas
+
+FALA: Esses efeitos também são investigados em estudos científicos. Blood e Zatorre relacionaram os arrepios musicais à atividade de regiões de recompensa e emoção. Salimpoor e colegas observaram liberação de dopamina em momentos de prazer musical e antecipação. Já Bernardi e colegas encontraram mudanças na respiração e nos batimentos conforme o andamento e as pausas. A Isabela traz mais exemplos para mostrar que essa relação é complexa.
+
+[AÇÃO] Revelar os quatro cartões. Resumir os resultados; não ler revistas, anos ou a lista completa de autores em voz alta.">
 <p class="kick">Parte 5 · Evidências científicas</p><h2>O que a pesquisa <em>mostra</em></h2>
 <div class="g2">
 <div class="card r"><div class="au">Blood &amp; Zatorre (2001)</div><div class="jr">PNAS</div><p>Música que causa arrepios ativa regiões ligadas a recompensa e emoção, as mesmas de outros prazeres.</p></div>
@@ -182,7 +234,11 @@ Seu navegador não conseguiu reproduzir o vídeo.
 <div class="card r"><div class="au">Boltz (2001) · Labbé et al. (2020) · Carraturo et al. (2025)</div><div class="jr">Trilha, modo e andamento</div><p>Trilhas alteram interpretação e memória de cenas; modo, andamento e cultura modulam o efeito.</p><div class="doi">doi:10.1525/mp.2001.18.4.427 · 10.1177/0305735620906887 · 10.1016/j.plrev.2024.11.017</div></div>
 </div></section>
 
-<section class="s evidence-more" data-n="Mais quatro exemplos. Kawakami e colegas pediram a 44 pessoas que separassem a emoção percebida na música da emoção sentida ao ouvi-la. A música triste também despertou sentimentos agradáveis: reconhecer tristeza não significa sentir apenas tristeza. Mori e Iwanaga mediram respostas corporais durante músicas escolhidas pelos participantes: os arrepios aumentaram a atividade elétrica da pele, enquanto as lágrimas se associaram a respiração mais lenta. Cheung e colegas combinaram um modelo de expectativa harmônica, avaliações de prazer e ressonância magnética. O prazer dependia da combinação entre incerteza e surpresa, e não de mais surpresa em qualquer situação. Por fim, Fritz e colegas observaram que participantes Mafa, de Camarões, sem exposição prévia à música ocidental, reconheceram alegria, tristeza e medo em trechos ocidentais acima do acaso. Isso mostra reconhecimento de expressões em uma tarefa específica, não que todos sintam a mesma coisa. São resultados de estudos específicos; contexto e diferenças individuais continuam importantes.">
+<section class="s evidence-more" data-n="Isabela Martines | 4:45–5:35 | Mais evidências
+
+FALA: Um estudo com 44 participantes mostrou que uma música percebida como triste também pode despertar sentimentos agradáveis. Outro encontrou respostas corporais diferentes para arrepios e lágrimas, embora ambos pudessem acompanhar prazer. Há também evidências de que o prazer depende da combinação entre expectativa e surpresa: um acorde inesperado pode agradar quando o contexto é previsível. Por fim, participantes Mafa, sem contato prévio com música ocidental, reconheceram alegria, tristeza e medo acima do acaso. Isso mostra reconhecimento de expressões musicais nessa tarefa, e não que todos tenham sentido as mesmas emoções.
+
+[AÇÃO] Revelar um cartão por exemplo. Fazer pequenas pausas entre os quatro resultados.">
 <p class="kick">Parte 5 · Mais evidências científicas</p><h2>Da emoção percebida à <em>resposta do corpo</em></h2>
 <div class="g2">
 <div class="card r"><div class="au">Música triste, sensação boa</div><div class="jr">Kawakami et al. (2013) · Frontiers in Psychology</div><p>Em um experimento com 44 pessoas, trechos percebidos como tristes também despertaram sentimentos agradáveis. Perceber tristeza e senti-la são coisas diferentes.</p></div>
@@ -193,7 +249,11 @@ Seu navegador não conseguiu reproduzir o vídeo.
 <p class="note" style="margin-top:12px">Resultados de estudos específicos; as respostas variam com a pessoa, a música e o contexto.</p>
 </section>
 
-<section class="s closing" data-n="Para concluir: a música pode mudar a maneira como vivemos um momento. Ritmo, harmonia, timbre e dinâmica criam expectativas. O corpo responde, e nossas memórias e o contexto participam do significado. Não existe uma emoção única para cada música. Na próxima vez que ouvir uma canção, leve esta pergunta: o que esta música desperta em mim?">
+<section class="s closing" data-n="Isabela Martines | 5:35–6:10 | Conclusão
+
+FALA: O que podemos levar dessa apresentação? O som cria expectativas, o corpo pode responder e cada pessoa dá sentido à experiência. Ritmo, harmonia, timbre e dinâmica participam desse processo, junto com nossas memórias e o contexto. Por isso, a música pode transformar a forma como sentimos um momento. Na próxima vez que vocês ouvirem uma canção, vale perguntar: o que esta música desperta em mim?
+
+[AÇÃO] Revelar os três pontos e a pergunta final, acompanhando a fala.">
 <p class="kick">Conclusão · Entre notas e emoções</p>
 <div class="closing-layout">
 <div class="closing-copy"><h2>A música transforma<br>a forma como<br><em>sentimos o momento.</em></h2><p>O efeito nasce do encontro entre<br>o som, a pessoa e o contexto.</p></div>
@@ -206,7 +266,11 @@ Seu navegador não conseguiu reproduzir o vídeo.
 <div class="closing-question r"><span>Na próxima vez<br>que ouvir uma música</span><p>O que esta música desperta em mim?</p></div>
 </section>
 
-<section class="s bibliography" data-n="Estas são as referências que sustentam os exemplos apresentados. Estas referências incluem os estudos complementares apresentados na Parte 5.">
+<section class="s bibliography" data-n="Isabela Martines | 6:10–6:15 | Referências
+
+FALA: Aqui estão as referências dos estudos e os créditos dos exemplos apresentados.
+
+[AÇÃO] Revelar as referências. Não ler a bibliografia em voz alta.">
 <p class="kick">Fontes da apresentação</p><h2>Referências e <em>créditos de áudio</em></h2>
 <div class="refs r">
 <p>Blood &amp; Zatorre (2001). PNAS 98(20). · Salimpoor et al. (2011). Nature Neuroscience 14. · Bernardi, Porta &amp; Sleight (2006). Heart 92. · Boltz (2001). Music Perception 18(4). · Labbé, Trost &amp; Grandjean (2020). Psychology of Music. · Carraturo et al. (2025). Physics of Life Reviews.</p>
@@ -215,7 +279,11 @@ Seu navegador não conseguiu reproduzir o vídeo.
 </div>
 </section>
 
-<section id="thanks" class="s" style="justify-content:center;align-items:center;text-align:center" data-n="Obrigado pela atenção! Abrimos espaço para perguntas e comentários.">
+<section id="thanks" class="s" style="justify-content:center;align-items:center;text-align:center" data-n="Isabela Martines | 6:15–6:25 | Obrigado
+
+FALA: Obrigado pela atenção! Ficamos à disposição para perguntas e comentários.
+
+[AÇÃO] Deixar o som de encerramento tocar e fazer uma breve pausa. A contagem de 6:25 termina antes das perguntas do público.">
 <p class="kick">Entre notas e emoções</p>
 <h1 style="font-size:120px;margin:24px 0"><em>Obrigado!</em></h1>
 <p style="font-size:28px;color:#c4c9e8;margin:8px 0">Por ouvir, sentir e compartilhar este momento.</p>
@@ -259,10 +327,10 @@ function dyn(){const b=bus(),t=C.currentTime+.05,g=C.createGain();g.gain.setValu
 const CH={maj:[60,64,67],min:[60,63,67],dim:[60,63,66]};
 function chord(k){const b=bus(),t=C.currentTime+.05;pn(b,CH[k],t,2.2,.13);nt(b,48,t,2.2,{v:.12});hl(CH[k],k=='min')}
 function hl(ms,chg){$$('#pk div').forEach(e=>e.classList.remove('on','chg'));$$('#pk div').forEach(e=>{if(ms.includes(+e.dataset.m)){e.classList.add('on');if(chg&&e.dataset.m=='63')e.classList.add('chg')}});clearTimeout(hl.t);hl.t=setTimeout(()=>$$('#pk div').forEach(e=>e.classList.remove('on','chg')),2400)}
-function compare(){chord('maj');setTimeout(()=>chord('min'),2600)}
+function halfStep(){const b=bus(),t=C.currentTime+.05;pn(b,[64],t,1.1,.13);pn(b,[63],t+1.4,1.1,.13);hl([64],false);setTimeout(()=>{if(cur===b)hl([63],true)},1450)}
 function glow(el,ms){const p=el.closest('.pn');clearTimeout(p.glowTimer);p.classList.add('pl');p.glowTimer=setTimeout(()=>p.classList.remove('pl'),ms)}
 function rock(el){
- stop();const audio=$('#rock-audio');audio.volume=.4;audio.currentTime=6;
+ stop();const audio=$('#rock-audio');audio.volume=.2;audio.currentTime=6;
  audio.ontimeupdate=()=>{if(audio.currentTime>=20)stop()};
  audio.onended=()=>stop();
  audio.play().then(()=>{col='255,77,141';el.closest('.pn').classList.add('pl')}).catch(()=>{$('#rock-status').textContent='Não foi possível carregar o áudio. Mantenha o arquivo WebM na mesma pasta da apresentação.'});
@@ -279,12 +347,12 @@ const pk=$('#pk');[['Dó',60],['Ré',62],['Mi',64],['Fá',65],['Sol',67],['Lá',
 $$('svg[data-w]').forEach(v=>{const w=v.dataset.w;let p='';for(let x=0;x<=120;x+=2){const ph=(x/30)%1,y=w=='sine'?Math.sin(ph*6.283):1-2*ph;p+=x+','+(20-y*14)+' '}v.setAttribute('viewBox','0 0 120 40');v.innerHTML='<polyline points="'+p+'" fill="none" stroke="#a5b4fc" stroke-width="2.5"/>'});
 for(let i=0;i<14;i++){const e=document.createElement('span');e.style.height=10+i*4+'px';e.style.animationDelay=i*.08+'s';$('#eq').appendChild(e)}
 // Deck
-const S=$$('.s'),T=['0:00–0:35','0:35–1:40','1:40–2:45','2:45–4:15','4:15–5:15','Vídeo · EEG','Evidências científicas','Mais evidências','Conclusão','Referências','Encerramento'],R=i=>[...S[i].querySelectorAll(':scope > .r, :scope .r')];
+const S=$$('.s'),T=["0:00–0:20 · João", "0:20–1:25 · João", "1:25–2:10 · Matheus", "2:10–3:10 · Matheus", "3:10–3:40 · Raphaela", "3:40–4:10 · Raphaela", "4:10–4:45 · Raphaela", "4:45–5:35 · Isabela", "5:35–6:10 · Isabela", "6:10–6:15 · Isabela", "6:15–6:25 · Isabela"],R=i=>[...S[i].querySelectorAll(':scope > .r, :scope .r')];
 let s=0,k=0;
 function show(){S.forEach((e,i)=>e.classList.toggle('on',i==s));R(s).forEach((e,i)=>e.classList.toggle('on',i<k));$('#cnt').textContent=(s+1)+' / '+S.length+' · '+T[s];$('#pg').style.width=(s+1)/S.length*100+'%';$('#nt').textContent=S[s].dataset.n}
 function next(){init();if(k<R(s).length){const revealed=R(s)[k];k++;if(revealed.classList.contains('team')){if(!mute)pad()}else tick()}else if(s<S.length-1){s++;k=0;stop();if(S[s].id==='thanks')closingSound();else whoosh()}show()}
 function prev(){if(k>0)k--;else if(s>0){s--;k=R(s).length;stop();whoosh()}show()}
-addEventListener('keydown',e=>{if(e.target.closest('video'))return;if(['ArrowRight',' ','PageDown'].includes(e.key)){e.preventDefault();next()}else if(['ArrowLeft','PageUp'].includes(e.key))prev();else if(e.key=='n'||e.key=='N')$('#nt').classList.toggle('show');else if(e.key=='m'||e.key=='M')mute=!mute;else if(e.key=='f'||e.key=='F')document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()});
+addEventListener('keydown',e=>{if(e.target.closest('video'))return;if(e.key==='ArrowUp'&&S[s].id==='contraste'){e.preventDefault();stop()}else if(['ArrowRight',' ','PageDown'].includes(e.key)){e.preventDefault();next()}else if(['ArrowLeft','PageUp'].includes(e.key))prev();else if(e.key=='n'||e.key=='N')$('#nt').classList.toggle('show');else if(e.key=='m'||e.key=='M')mute=!mute;else if(e.key=='f'||e.key=='F')document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()});
 let tx=0;addEventListener('touchstart',e=>{tx=e.target.closest('video')?null:e.touches[0].clientX});addEventListener('touchend',e=>{if(tx===null||e.target.closest('video'))return;const d=e.changedTouches[0].clientX-tx;if(d<-50)next();if(d>50)prev()});
 const st=$('#st'),cv=$('#cv'),cx=cv.getContext('2d');
 function fit(){const z=Math.min(innerWidth/1280,(innerHeight-40)/720);st.style.transform='scale('+z+')';st.style.left=(innerWidth-1280*z)/2+'px';st.style.top=(innerHeight-40-720*z)/2+'px';cv.width=innerWidth;cv.height=innerHeight}
