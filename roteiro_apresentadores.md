@@ -51,7 +51,7 @@ Se o ensaio ultrapassar 7 minutos, expliquem oralmente apenas o estudo de músic
 
 > Essa sequência começa em Dó maior e passa para Lá menor. Eles compartilham duas notas, Dó e Mi, então a sonoridade muda mantendo uma conexão.
 
-> A formação também faz diferença. A terça é uma distância entre notas: no acorde maior, são quatro semitons; no menor, três. Isso ajuda a dar a cada acorde sua característica.
+> A formação também muda a sonoridade. Não precisamos decorar nomes técnicos: basta notar como as notas se combinam e como o acorde parece diferente quando elas mudam de lugar.
 
 **Ação:** Revele os dois primeiros cartões.
 

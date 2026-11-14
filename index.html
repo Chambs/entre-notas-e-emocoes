@@ -100,7 +100,9 @@ svg.w{width:100%;height:40px}
 
 .harm-demo{width:560px;flex-shrink:0}
 .harm-path{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:0 0 14px}
-.harm-path>div{padding:9px 5px;background:rgba(255,255,255,.05);border:1px solid #454365;border-radius:12px;text-align:center;transition:.2s}
+.harm-path>button{padding:9px 5px;background:rgba(255,255,255,.05);border:1px solid #454365;border-radius:12px;text-align:center;transition:.2s;font-family:inherit;cursor:pointer;color:inherit}
+.harm-path>button:hover{background:rgba(139,92,246,.22)}
+.harm-path>button:focus-visible{outline:2px solid #c4b5fd;outline-offset:3px}
 .harm-path b{display:block;font-size:25px;color:#c4b5fd}
 .harm-path span{display:block;font-size:13px;color:#e8ebff}
 .harm-path small{display:block;font-size:11px;color:#aab3d8;margin-top:4px}
@@ -155,7 +157,7 @@ FALA: Os acordes podem criar uma sensação de movimento: alguns parecem prolong
 
 FALA: Essa sequência começa em Dó maior e passa para Lá menor. Eles compartilham duas notas, Dó e Mi, então a sonoridade muda mantendo uma conexão.
 
-A formação também faz diferença. A terça é uma distância entre notas: no acorde maior, são quatro semitons; no menor, três. Isso ajuda a dar a cada acorde sua característica.
+A formação também muda a sonoridade. Não precisamos decorar nomes técnicos: basta notar como as notas se combinam e como o acorde parece diferente quando elas mudam de lugar.
 
 [AÇÃO] Revele os dois primeiros cartões.
 
@@ -171,17 +173,17 @@ FALA: A intensidade dessa sensação pode variar conforme nossa familiaridade co
 <p class="kick">Parte 2 · Acordes</p><h2>Da formação à sensação: <em>tensão e repouso</em></h2>
 <div class="row"><div class="harm-demo">
 <div class="harm-path" aria-label="Sequência em Dó maior">
-<div data-step="0"><b>C</b><span>Dó maior</span><small>I · ponto de partida</small></div>
-<div data-step="1"><b>Am</b><span>Lá menor</span><small>vi · muda a cor</small></div>
-<div data-step="2"><b>Dm</b><span>Ré menor</span><small>ii · prepara</small></div>
-<div data-step="3"><b>G7</b><span>Sol com 7ª</span><small>V7 · tensão</small></div>
-<div data-step="4"><b>C</b><span>Dó maior</span><small>I · retorno</small></div>
+<button type="button" data-step="0" onclick="harmonicChord(0)" aria-label="Tocar Dó maior"><b>C</b><span>Dó maior</span><small>I · ponto de partida</small></button>
+<button type="button" data-step="1" onclick="harmonicChord(1)" aria-label="Tocar Lá menor"><b>Am</b><span>Lá menor</span><small>vi · muda a cor</small></button>
+<button type="button" data-step="2" onclick="harmonicChord(2)" aria-label="Tocar Ré menor"><b>Dm</b><span>Ré menor</span><small>ii · prepara</small></button>
+<button type="button" data-step="3" onclick="harmonicChord(3)" aria-label="Tocar Sol com sétima"><b>G7</b><span>Sol com 7ª</span><small>V7 · tensão</small></button>
+<button type="button" data-step="4" onclick="harmonicChord(4)" aria-label="Tocar Dó maior, retorno"><b>C</b><span>Dó maior</span><small>I · retorno</small></button>
 </div>
 <div class="pk" id="pk"></div>
 <button class="btn" onclick="harmonicJourney()">▶ Ouvir o percurso · 9 s</button>
 <p id="harm-status" class="harm-status" aria-live="polite">C → Am → Dm → G7 → C · escute a chegada ao último acorde.</p>
 </div><div class="ci">
-<div class="card r"><b>1 · A terça muda a cor</b><p>Maior: fundamental → terça = 4 semitons.<br>Menor: 3 semitons. Essa distância participa do caráter do acorde.</p></div>
+<div class="card r"><b>1 · A combinação muda a cor</b><p>Ouça como as notas se encaixam em cada acorde. Uma pequena mudança na formação altera a sonoridade.</p></div>
 <div class="card r"><b>2 · Notas comuns conectam</b><p>C = Dó · Mi · Sol<br>Am = Lá · Dó · Mi<br>Dó e Mi permanecem: contraste com continuidade.</p></div>
 <div class="card r"><b>3 · A sétima pede uma chegada</b><p>G7 = Sol · Si · Ré · Fá.<br>O trítono Si–Fá cria tensão: Si → Dó e Fá → Mi conduzem ao repouso em C.</p></div>
 <p class="note r">Na música tonal ocidental, o contexto cria expectativas. Repouso, surpresa e emoção variam com a escuta.</p>
@@ -332,7 +334,7 @@ FALA: Obrigado pela atenção! Ficamos à disposição para perguntas e comentá
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],DEF='139,92,246';
 let C,M,A,cur,NB,col=DEF,mute=false;
 function init(){if(C)return;C=new(window.AudioContext||window.webkitAudioContext)();M=C.createGain();M.gain.value=.8;A=C.createAnalyser();A.fftSize=128;M.connect(A);A.connect(C.destination);NB=C.createBuffer(1,C.sampleRate,C.sampleRate);const d=NB.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1}
-function stop(except=null){clearTimeout(hl.t);$$('#pk div').forEach(e=>e.classList.remove('on','chg'));$$('.harm-path>div').forEach(e=>e.classList.remove('playing'));if($('#harm-status'))$('#harm-status').textContent='C → Am → Dm → G7 → C · escute a chegada ao último acorde.';['#rock-audio','#jazz-audio','#brain-video'].forEach(id=>{const audio=$(id);if(audio&&audio!==except){audio.pause();audio.currentTime=0}});if(cur){const o=cur;o.gain.setTargetAtTime(0,C.currentTime,.05);setTimeout(()=>o.disconnect(),500);cur=null}col=DEF;$$('.pn').forEach(x=>x.classList.remove('pl'))}
+function stop(except=null){clearTimeout(hl.t);$$('#pk div').forEach(e=>e.classList.remove('on','chg'));$$('.harm-path>button').forEach(e=>e.classList.remove('playing'));if($('#harm-status'))$('#harm-status').textContent='C → Am → Dm → G7 → C · escute a chegada ao último acorde.';['#rock-audio','#jazz-audio','#brain-video'].forEach(id=>{const audio=$(id);if(audio&&audio!==except){audio.pause();audio.currentTime=0}});if(cur){const o=cur;o.gain.setTargetAtTime(0,C.currentTime,.05);setTimeout(()=>o.disconnect(),500);cur=null}col=DEF;$$('.pn').forEach(x=>x.classList.remove('pl'))}
 function bus(){init();C.resume();stop();cur=C.createGain();cur.connect(M);return cur}
 const hz=m=>440*2**((m-69)/12);
 function nt(b,m,t,d,o={}){const os=C.createOscillator(),g=C.createGain(),v=o.v??.15,a=o.a??.01;os.type=o.w||'triangle';os.frequency.value=hz(m);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+a);if(o.sus){g.gain.setValueAtTime(v,t+d-.05);g.gain.linearRampToValueAtTime(0,t+d)}else g.gain.exponentialRampToValueAtTime(.001,t+d);os.connect(g);g.connect(o.to||b);os.start(t);os.stop(t+d+.05)}
@@ -360,11 +362,18 @@ function dyn(){const b=bus(),t=C.currentTime+.05,g=C.createGain();g.gain.setValu
 const CH={maj:[60,64,67],min:[60,63,67],dim:[60,63,66]};
 function chord(k){const b=bus(),t=C.currentTime+.05;pn(b,CH[k],t,2.2,.13);nt(b,48,t,2.2,{v:.12});hl(CH[k],k=='min')}
 function hl(ms,chg){$$('#pk div').forEach(e=>e.classList.remove('on','chg'));$$('#pk div').forEach(e=>{if(ms.includes(+e.dataset.m)){e.classList.add('on');if(chg&&e.dataset.m=='63')e.classList.add('chg')}});clearTimeout(hl.t);hl.t=setTimeout(()=>$$('#pk div').forEach(e=>e.classList.remove('on','chg')),2400)}
+const HARMONY=[{notes:[60,64,67],bass:48,text:'C · Dó–Mi–Sol: ponto de partida.'},{notes:[60,64,69],bass:45,text:'Am · Lá–Dó–Mi: outra cor, com Dó e Mi em comum.'},{notes:[62,65,69],bass:50,text:'Dm · Ré–Fá–Lá: prepara a chegada da dominante.'},{notes:[62,65,67,71],bass:43,text:'G7 · Sol–Si–Ré–Fá: escute a tensão de Si e Fá.'},{notes:[60,64,67,72],bass:48,text:'C · Si → Dó; Fá → Mi: resolução e sensação de chegada.'}];
+function harmonicChord(i){
+ const step=HARMONY[i],b=bus(),t=C.currentTime+.05;
+ pn(b,step.notes,t,2.2,.085);nt(b,step.bass,t,2.2,{w:'sine',v:.12});hl(step.notes,false);
+ $$('.harm-path>button').forEach((el,j)=>el.classList.toggle('playing',j===i));$('#harm-status').textContent=step.text;
+ setTimeout(()=>{if(cur===b)$$('.harm-path>button').forEach(el=>el.classList.remove('playing'))},2400);
+}
 function harmonicJourney(){
  const b=bus(),t=C.currentTime+.05;
- const steps=[{notes:[60,64,67],bass:48,text:'C · Dó–Mi–Sol: ponto de partida.'},{notes:[60,64,69],bass:45,text:'Am · Lá–Dó–Mi: outra cor, com Dó e Mi em comum.'},{notes:[62,65,69],bass:50,text:'Dm · Ré–Fá–Lá: prepara a chegada da dominante.'},{notes:[62,65,67,71],bass:43,text:'G7 · Sol–Si–Ré–Fá: escute a tensão de Si e Fá.'},{notes:[60,64,67,72],bass:48,text:'C · Si → Dó; Fá → Mi: resolução e sensação de chegada.'}];
- steps.forEach((step,i)=>{const delay=i*1.5,d=i===4?2.5:1.4;pn(b,step.notes,t+delay,d,.085);nt(b,step.bass,t+delay,d,{w:'sine',v:.12});setTimeout(()=>{if(cur!==b)return;hl(step.notes,false);$$('.harm-path>div').forEach((el,j)=>el.classList.toggle('playing',j===i));$('#harm-status').textContent=step.text},50+delay*1000)});
- setTimeout(()=>{if(cur!==b)return;$$('.harm-path>div').forEach(e=>e.classList.remove('playing'))},8800);
+ const steps=HARMONY;
+ steps.forEach((step,i)=>{const delay=i*1.5,d=i===4?2.5:1.4;pn(b,step.notes,t+delay,d,.085);nt(b,step.bass,t+delay,d,{w:'sine',v:.12});setTimeout(()=>{if(cur!==b)return;hl(step.notes,false);$$('.harm-path>button').forEach((el,j)=>el.classList.toggle('playing',j===i));$('#harm-status').textContent=step.text},50+delay*1000)});
+ setTimeout(()=>{if(cur!==b)return;$$('.harm-path>button').forEach(e=>e.classList.remove('playing'))},8800);
 }
 function halfStep(){const b=bus(),t=C.currentTime+.05;pn(b,[64],t,1.1,.13);pn(b,[63],t+1.4,1.1,.13);hl([64],false);setTimeout(()=>{if(cur===b)hl([63],true)},1450)}
 function glow(el,ms){const p=el.closest('.pn');clearTimeout(p.glowTimer);p.classList.add('pl');p.glowTimer=setTimeout(()=>p.classList.remove('pl'),ms)}
@@ -391,7 +400,7 @@ let s=0,k=0;
 function show(){S.forEach((e,i)=>e.classList.toggle('on',i==s));R(s).forEach((e,i)=>e.classList.toggle('on',i<k));$('#cnt').textContent=(s+1)+' / '+S.length+' · '+T[s];$('#pg').style.width=(s+1)/S.length*100+'%';$('#nt').textContent=S[s].dataset.n}
 function next(){init();if(k<R(s).length){const revealed=R(s)[k];k++;if(revealed.classList.contains('team')){if(!mute)pad()}else tick()}else if(s<S.length-1){s++;k=0;stop();if(S[s].id==='thanks')closingSound();else whoosh()}show()}
 function prev(){if(k>0)k--;else if(s>0){s--;k=R(s).length;stop();whoosh()}show()}
-addEventListener('keydown',e=>{if(e.target.closest('video'))return;if(e.key==='ArrowUp'&&S[s].id==='contraste'){e.preventDefault();stop()}else if(['ArrowRight',' ','PageDown'].includes(e.key)){e.preventDefault();next()}else if(['ArrowLeft','PageUp'].includes(e.key))prev();else if(e.key=='n'||e.key=='N')$('#nt').classList.toggle('show');else if(e.key=='m'||e.key=='M')mute=!mute;else if(e.key=='f'||e.key=='F')document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()});
+addEventListener('keydown',e=>{if(e.target.closest('video')||(e.key===' '&&e.target.closest('button')))return;if(e.key==='ArrowUp'&&S[s].id==='contraste'){e.preventDefault();stop()}else if(['ArrowRight',' ','PageDown'].includes(e.key)){e.preventDefault();next()}else if(['ArrowLeft','PageUp'].includes(e.key))prev();else if(e.key=='n'||e.key=='N')$('#nt').classList.toggle('show');else if(e.key=='m'||e.key=='M')mute=!mute;else if(e.key=='f'||e.key=='F')document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()});
 let tx=0;addEventListener('touchstart',e=>{tx=e.target.closest('video')?null:e.touches[0].clientX});addEventListener('touchend',e=>{if(tx===null||e.target.closest('video'))return;const d=e.changedTouches[0].clientX-tx;if(d<-50)next();if(d>50)prev()});
 const st=$('#st'),cv=$('#cv'),cx=cv.getContext('2d');
 function fit(){const z=Math.min(innerWidth/1280,(innerHeight-40)/720);st.style.transform='scale('+z+')';st.style.left=(innerWidth-1280*z)/2+'px';st.style.top=(innerHeight-40-720*z)/2+'px';cv.width=innerWidth;cv.height=innerHeight}
